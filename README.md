@@ -21,3 +21,8 @@ Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorsche
 - Reduced the contrast of delimiter colors for improved visual comfort
 - Added highlight groups for UI components to enhance plugin compatibility
 - Implemented completion menu highlight groups (Tested with Blink Completion, should also work with nvim-cmp)
+
+# Todo
+
+- Adjust Neogit and Diffview highlighting.
+- fix Bufferline background
