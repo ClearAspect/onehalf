@@ -26,4 +26,3 @@ Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorsche
 
 - Adjust Neogit and Diffview highlighting.
 - fix Bufferline background
-- Add onehalflight theme
