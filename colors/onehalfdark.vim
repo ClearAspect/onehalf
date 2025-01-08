@@ -1,4 +1,4 @@
 lua << EOF
 local onehalfdark = require("onehalf")
-onehalfdark.setup({})
+onehalfdark.setup("dark")
 EOF

@@ -1,43 +1,43 @@
-local C = require('onehalf.colors.onehalfdark')
+local C = require('onehalf.colors.onehalflight')
 
-local onehalfdark = {}
+local onehalflight = {}
 
-onehalfdark.normal = {
+onehalflight.normal = {
 	a = { bg = C.blue, fg = C.bg, gui = "bold" },
 	b = { bg = C.black, fg = C.blue },
 	c = { bg = C.bg, fg = C.fg },
 }
 
-onehalfdark.insert = {
+onehalflight.insert = {
 	a = { bg = C.green, fg = C.bg, gui = "bold" },
 	b = { bg = C.black, fg = C.green },
 }
 
-onehalfdark.visual = {
+onehalflight.visual = {
 	a = { bg = C.blue, fg = C.bg, gui = "bold" },
 	b = { bg = C.black, fg = C.blue },
 }
 
-onehalfdark.replace = {
+onehalflight.replace = {
 	a = { bg = C.yellow, fg = C.bg, gui = "bold" },
 	b = { bg = C.black, fg = C.yellow },
 }
 
-onehalfdark.command = {
+onehalflight.command = {
 	a = { bg = C.red, fg = C.bg, gui = "bold" },
 	b = { bg = C.black, fg = C.red },
 }
 
-onehalfdark.terminal = {
+onehalflight.terminal = {
 	a = { bg = C.red, fg = C.bg, gui = "bold" },
 	b = { bg = C.black, fg = C.red },
 }
 
 
-onehalfdark.inactive = {
+onehalflight.inactive = {
 	a = { bg = C.bg, fg = C.blue },
 	b = { bg = C.bg, fg = C.black, gui = "bold" },
 	c = { bg = C.bg, fg = C.black },
 }
 
-return onehalfdark
+return onehalflight
