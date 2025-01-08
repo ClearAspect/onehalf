@@ -1,6 +1,6 @@
 # OneHalf
 
-Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme. However, I've added support for some plugins and tweaked a few highlight groups that were a bit of an eye swore.
+Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme. However, I've added support for some plugins and tweaked a few highlight groups that were a bit of an eye sore.
 
 
 # Features
@@ -26,3 +26,4 @@ Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorsche
 
 - Adjust Neogit and Diffview highlighting.
 - fix Bufferline background
+- Add onehalflight theme
