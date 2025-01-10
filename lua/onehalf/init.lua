@@ -19,10 +19,13 @@ M.setup = function(style)
 
 	vim.o.termguicolors = true
 	vim.o.background = style
-	vim.g.colors_name = 'onehalf' .. style
 
 	-- Clear all highlights before setting new ones
 	vim.cmd('highlight clear')
+
+	-- Set the colorscheme name properly
+	vim.g.colors_name = 'onehalf' .. style
+
 	theme.set_highlights()
 end
 
