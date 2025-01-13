@@ -1,19 +1,10 @@
-local function get_colors()
-	local background = vim.o.background or 'dark'
-	if background == 'light' then
-		return require('onehalf.colors.onehalflight')
-	else
-		return require('onehalf.colors.onehalfdark')
-	end
-end
-
-
 local hl = vim.api.nvim_set_hl
 local theme = {}
 
 theme.set_highlights = function()
 	-- Get fresh colors every time we set highlights
-	local c = get_colors()
+	local c = require("onehalf.util").get_colors()
+
 	-- highlights
 	hl(0, "Normal", { fg = c.fg, bg = c.bg })
 	hl(0, "NormalFloat", { fg = c.comment_fg, bg = c.bg })
@@ -150,18 +141,10 @@ theme.set_highlights = function()
 	hl(0, "WhichKeyValue", { fg = c.green, bg = 'NONE' })
 
 	-- Git
-	hl(0, "GitSignsAdd", { fg = c.green, bg = 'NONE' })
-	hl(0, "GitSignsAddNr", { fg = c.green, bg = 'NONE' })
-	hl(0, "GitSignsAddLn", { fg = 'NONE', bg = c.green })
-	hl(0, "GitSignsAddCul", { fg = 'NONE', bg = c.green })
-	hl(0, "GitSignsChange", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "GitSignsChangeNr", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "GitSignsChangeLn", { fg = 'NONE', bg = c.yellow })
-	hl(0, "GitSignsChangeCul", { fg = 'NONE', bg = c.yellow })
-	hl(0, "GitSignsDelete", { fg = c.red, bg = 'NONE' })
-	hl(0, "GitSignsDeleteNr", { fg = c.red, bg = 'NONE' })
-	hl(0, "GitSignsDeleteLn", { fg = 'NONE', bg = c.red })
-	hl(0, "GitSignsDeleteCul", { fg = 'NONE', bg = c.red })
+	local gitsigns = require("onehalf.groups.integrations.gitsigns").get()
+	for group, colors in pairs(gitsigns) do
+		hl(0, group, colors)
+	end
 
 	-- Telescope
 	hl(0, "TelescopeSelection", { fg = c.blue, bg = 'NONE' })
@@ -179,9 +162,11 @@ theme.set_highlights = function()
 	hl(0, "CmpGhostText", { fg = c.comment_fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbr", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrDeprecated", { fg = c.comment_fg, bg = 'NONE', strikethrough = true, })
+	hl(0, "CmpItemKind", { fg = c.fg, bg = 'NONE' })
+	hl(0, "CmpItemMenu", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrMatch", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.fg, bg = 'NONE' })
-	hl(0, "CmpItemKind", { fg = c.fg, bg = 'NONE' })
+
 	hl(0, "CmpItemKindSnippet", { fg = c.magenta, bg = 'NONE' })
 	hl(0, "CmpItemKindCopilot", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemKindFolder", { fg = c.blue, bg = 'NONE' })

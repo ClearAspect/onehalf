@@ -1,5 +1,5 @@
-local M = {}
 local theme = require('onehalf.theme')
+local M = {}
 
 M.setup = function(style)
 	-- default to dark if none is specified
