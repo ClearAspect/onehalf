@@ -1,68 +1,19 @@
-local function get_colors()
-	local background = vim.o.background or 'dark'
-	if background == 'light' then
-		return require('onehalf.colors.onehalflight')
-	else
-		return require('onehalf.colors.onehalfdark')
-	end
-end
-
-
 local hl = vim.api.nvim_set_hl
 local theme = {}
 
 theme.set_highlights = function()
 	-- Get fresh colors every time we set highlights
-	local c = get_colors()
+	local c = require("onehalf.util").get_colors()
+
 	-- highlights
-	hl(0, "Normal", { fg = c.fg, bg = c.bg })
-	hl(0, "NormalFloat", { fg = c.comment_fg, bg = c.bg })
-	hl(0, "Pmenu", { fg = c.comment_fg, bg = c.bg })
-	hl(0, "PmenuSel", { fg = 'NONE', bg = c.selection })
 	hl(0, "PmenuKind", { link = 'Pmenu' })
 	hl(0, "PmenuKindSel", { link = 'PmenuSel' })
 	hl(0, "PmenuExtra", { link = 'Pmenu' })
 	hl(0, "PmenuExtraSel", { link = 'PmenuSel' })
-	hl(0, "PmenuSbar", { fg = c.selection, bg = 'NONE' })
-	hl(0, "PmenuThumb", { fg = c.selection, bg = 'NONE' })
-	hl(0, "Cursor", { fg = c.bg, bg = c.blue })
-	hl(0, "CursorColumn", { fg = 'NONE', bg = c.cursor_line })
-	hl(0, "CursorLine", { fg = 'NONE', bg = c.cursor_line })
-	hl(0, "LineNr", { fg = c.gutter_fg, bg = c.gutter_bg })
-	hl(0, "CursorLineNr", { fg = c.fg, bg = 'NONE' })
 	hl(0, "DiffAdd", { fg = c.green, bg = 'NONE' })
 	hl(0, "DiffChange", { fg = c.yellow, bg = 'NONE' })
 	hl(0, "DiffDelete", { fg = c.red, bg = 'NONE' })
 	hl(0, "DiffText", { fg = c.blue, bg = 'NONE' })
-	hl(0, "IncSearch", { fg = c.bg, bg = c.yellow })
-	hl(0, "Search", { fg = c.bg, bg = c.yellow })
-	hl(0, "ErrorMsg", { fg = c.fg, bg = 'NONE' })
-	hl(0, "ModeMsg", { fg = c.fg, bg = 'NONE' })
-	hl(0, "MoreMsg", { fg = c.fg, bg = 'NONE' })
-	hl(0, "WarningMsg", { fg = c.red, bg = 'NONE' })
-	hl(0, "Question", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "SpellBad", { fg = c.red, bg = 'NONE' })
-	hl(0, "SpellCap", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "SpellLocal", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "SpellRare", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "TabLine", { fg = c.comment_fg, bg = c.cursor_line })
-	hl(0, "TabLineFill", { fg = c.comment_fg, bg = c.cursor_line })
-	hl(0, "TabLineSel", { fg = c.fg, bg = c.bg })
-	hl(0, "Visual", { fg = 'NONE', bg = c.selection })
-	hl(0, "VisualNOS", { fg = 'NONE', bg = c.selection })
-	hl(0, "ColorColumn", { fg = 'NONE', bg = c.color_col })
-	hl(0, "Conceal", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Directory", { fg = c.blue, bg = 'NONE' })
-	hl(0, "VertSplit", { fg = c.vertsplit, bg = c.vertsplit })
-	hl(0, "Folded", { fg = c.fg, bg = 'NONE' })
-	hl(0, "FoldColumn", { fg = c.fg, bg = 'NONE' })
-	hl(0, "SignColumn", { fg = c.fg, bg = 'NONE' })
-	hl(0, "MatchParen", { fg = c.fg, bg = 'NONE', underline = true, })
-	hl(0, "SpecialKey", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Title", { fg = c.green, bg = 'NONE' })
-	hl(0, "WildMenu", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Whitespace", { fg = c.non_text, bg = 'NONE' })
-	hl(0, "NonText", { fg = c.non_text, bg = 'NONE' })
 	hl(0, "Comment", { fg = c.comment_fg, bg = 'NONE', italic = true, })
 	hl(0, "Constant", { fg = c.cyan, bg = 'NONE' })
 	hl(0, "String", { fg = c.green, bg = 'NONE' })
@@ -150,18 +101,10 @@ theme.set_highlights = function()
 	hl(0, "WhichKeyValue", { fg = c.green, bg = 'NONE' })
 
 	-- Git
-	hl(0, "GitSignsAdd", { fg = c.green, bg = 'NONE' })
-	hl(0, "GitSignsAddNr", { fg = c.green, bg = 'NONE' })
-	hl(0, "GitSignsAddLn", { fg = 'NONE', bg = c.green })
-	hl(0, "GitSignsAddCul", { fg = 'NONE', bg = c.green })
-	hl(0, "GitSignsChange", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "GitSignsChangeNr", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "GitSignsChangeLn", { fg = 'NONE', bg = c.yellow })
-	hl(0, "GitSignsChangeCul", { fg = 'NONE', bg = c.yellow })
-	hl(0, "GitSignsDelete", { fg = c.red, bg = 'NONE' })
-	hl(0, "GitSignsDeleteNr", { fg = c.red, bg = 'NONE' })
-	hl(0, "GitSignsDeleteLn", { fg = 'NONE', bg = c.red })
-	hl(0, "GitSignsDeleteCul", { fg = 'NONE', bg = c.red })
+	local gitsigns = require("onehalf.groups.integrations.gitsigns").get()
+	for group, colors in pairs(gitsigns) do
+		hl(0, group, colors)
+	end
 
 	-- Telescope
 	hl(0, "TelescopeSelection", { fg = c.blue, bg = 'NONE' })
@@ -169,8 +112,6 @@ theme.set_highlights = function()
 	hl(0, "TelescopeBorder", { fg = c.blue, bg = c.bg })
 
 	-- StatusLine
-	hl(0, "StatusLine", { fg = c.blue, bg = c.cursor_line })
-	hl(0, "StatusLineNC", { fg = c.comment_fg, bg = c.cursor_line })
 	hl(0, "StatusLineSeparator", { fg = c.black, bg = 'NONE' })
 	hl(0, "StatusLineTerm", { fg = c.black, bg = 'NONE' })
 	hl(0, "StatusLineTermNC", { fg = c.black, bg = 'NONE' })
@@ -179,9 +120,11 @@ theme.set_highlights = function()
 	hl(0, "CmpGhostText", { fg = c.comment_fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbr", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrDeprecated", { fg = c.comment_fg, bg = 'NONE', strikethrough = true, })
+	hl(0, "CmpItemKind", { fg = c.fg, bg = 'NONE' })
+	hl(0, "CmpItemMenu", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrMatch", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.fg, bg = 'NONE' })
-	hl(0, "CmpItemKind", { fg = c.fg, bg = 'NONE' })
+
 	hl(0, "CmpItemKindSnippet", { fg = c.magenta, bg = 'NONE' })
 	hl(0, "CmpItemKindCopilot", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemKindFolder", { fg = c.blue, bg = 'NONE' })
