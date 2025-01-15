@@ -5,89 +5,35 @@ theme.set_highlights = function()
 	-- Get fresh colors every time we set highlights
 	local c = require("onehalf.util").get_colors()
 
-	-- highlights
-	hl(0, "PmenuKind", { link = 'Pmenu' })
-	hl(0, "PmenuKindSel", { link = 'PmenuSel' })
-	hl(0, "PmenuExtra", { link = 'Pmenu' })
-	hl(0, "PmenuExtraSel", { link = 'PmenuSel' })
-	hl(0, "DiffAdd", { fg = c.green, bg = 'NONE' })
-	hl(0, "DiffChange", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "DiffDelete", { fg = c.red, bg = 'NONE' })
-	hl(0, "DiffText", { fg = c.blue, bg = 'NONE' })
-	hl(0, "Comment", { fg = c.comment_fg, bg = 'NONE', italic = true, })
-	hl(0, "Constant", { fg = c.cyan, bg = 'NONE' })
-	hl(0, "String", { fg = c.green, bg = 'NONE' })
-	hl(0, "Character", { fg = c.green, bg = 'NONE' })
-	hl(0, "Number", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Boolean", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Float", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Identifier", { fg = c.red, bg = 'NONE' })
-	hl(0, "Function", { fg = c.blue, bg = 'NONE' })
-	hl(0, "Statement", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Conditional", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Repeat", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Label", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Operator", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Keyword", { fg = c.red, bg = 'NONE' })
-	hl(0, "Exception", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "PreProc", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Include", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Define", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Macro", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "PreCondit", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Type", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "StorageClass", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Structure", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Typedef", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "Special", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "SpecialChar", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Tag", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Delimiter", { fg = c.comment_fg, bg = 'NONE' })
-	hl(0, "SpecialComment", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Debug", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Underlined", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Ignore", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Error", { fg = c.red, bg = c.gutter_bg })
-	hl(0, "Todo", { fg = c.magenta, bg = 'NONE' })
-	hl(0, "Variable", { fg = c.red, bg = 'NONE' })
-	hl(0, "Bold", { fg = 'NONE', bg = 'NONE', bold = true, })
-	hl(0, "Italic", { fg = 'NONE', bg = 'NONE', italic = true, })
+	-- Editor
+	local editor = require("onehalf.groups.editor").get()
+	for group, colors in pairs(editor) do
+		hl(0, group, colors)
+	end
+
+	-- Syntax
+	local syntax = require("onehalf.groups.syntax").get()
+	for group, colors in pairs(syntax) do
+		hl(0, group, colors)
+	end
+
+	-- Terminal
+	local terminal = require("onehalf.groups.terminal").get()
+	for key, color in pairs(terminal) do
+		vim.g[key] = color
+	end
 
 	-- Treesitter
-	hl(0, "TSText", { fg = c.fg, bg = 'NONE' })
-	hl(0, "TSComment", { link = 'Comment' })
-	hl(0, "TSConstant", { link = 'Constant' })
-	hl(0, "TSConstMacro", { link = 'Constant' })
-	hl(0, "TSString", { link = 'String' })
-	hl(0, "TSStringRegex", { link = 'String' })
-	hl(0, "TSStringEscape", { link = 'String' })
-	hl(0, "TSCharacter", { link = 'Character' })
-	hl(0, "TSNumber", { link = 'Number' })
-	hl(0, "TSBoolean", { link = 'Boolean' })
-	hl(0, "TSFloat", { link = 'Float' })
-	hl(0, "TSFunction", { link = 'Function' })
-	hl(0, "TSFuncBuiltin", { link = 'Function' })
-	hl(0, "TSFuncMacro", { link = 'Function' })
-	hl(0, "TSMethod", { link = 'Function' })
-	hl(0, "TSConditional", { link = 'Conditional' })
-	hl(0, "TSRepeat", { link = 'Repeat' })
-	hl(0, "TSLabel", { link = 'Label' })
-	hl(0, "TSOperator", { link = 'Operator' })
-	hl(0, "TSKeyword", { link = 'Keyword' })
-	hl(0, "TSKeywordReturn", { link = 'Keyword' })
-	hl(0, "TSKeywordFunction", { link = 'Keyword' })
-	hl(0, "TSException", { link = 'Exception' })
-	hl(0, "TSInclude", { link = 'Include' })
-	hl(0, "TSType", { link = 'Type' })
-	hl(0, "TSTypeBuiltin", { link = 'Type' })
-	hl(0, "TSStructure", { link = 'Structure' })
-	hl(0, "TSPunctSpecial", { link = 'Special' })
-	hl(0, "TSTag", { link = 'Tag' })
-	hl(0, "TSPunctDelimiter", { link = 'Delimiter' })
-	hl(0, "TSUnderline", { link = 'Underlined' })
-	hl(0, "TSError", { link = 'Error' })
-	hl(0, "TSVariable", { link = 'Variable' })
-	hl(0, "TSVariableBuiltin", { link = 'Variable' })
+	local treesitter = require("onehalf.groups.integrations.treesitter").get()
+	for group, colors in pairs(treesitter) do
+		hl(0, group, colors)
+	end
+
+	-- Semantic Tokens (LSP)
+	local semantic_tokens = require("onehalf.groups.integrations.semantic_tokens").get()
+	for group, colors in pairs(semantic_tokens) do
+		hl(0, group, colors)
+	end
 
 	-- Whichkey
 	hl(0, "WhichKey", { fg = c.red, bg = c.bg })
@@ -125,7 +71,7 @@ theme.set_highlights = function()
 	hl(0, "CmpItemAbbrMatch", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemAbbrMatchFuzzy", { fg = c.fg, bg = 'NONE' })
 
-	hl(0, "CmpItemKindSnippet", { fg = c.magenta, bg = 'NONE' })
+	hl(0, "CmpItemKindSnippet", { fg = c.purple, bg = 'NONE' })
 	hl(0, "CmpItemKindCopilot", { fg = c.fg, bg = 'NONE' })
 	hl(0, "CmpItemKindFolder", { fg = c.blue, bg = 'NONE' })
 	hl(0, "CmpItemKindKeyword", { link = 'Keyword' })
