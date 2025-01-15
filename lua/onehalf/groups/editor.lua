@@ -1,4 +1,3 @@
-
 local M = {}
 
 function M.get()
@@ -6,67 +5,74 @@ function M.get()
 
 	return {
 
-	hl(0, "ColorColumn", { fg = 'NONE', bg = c.color_col })
-	hl(0, "Conceal", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Cursor", { fg = c.bg, bg = c.blue })
-	hl(0, "lCursor", { fg = c.bg, bg = c.blue })
-	hl(0, "CursorIM", { fg = c.bg, bg = c.blue })
-	hl(0, "CursorColumn", { fg = 'NONE', bg = c.cursor_line })
-	hl(0, "CursorLine", { fg = 'NONE', bg = c.cursor_line })
-	hl(0, "CursorLineNr", { fg = c.fg, bg = 'NONE' })
-	hl(0, "Directory", { fg = c.blue, bg = 'NONE' })
+		ColorColumn = { bg = c.color_col },
+		Conceal = { fg = c.fg, },
+		Cursor = { fg = c.bg, bg = c.blue },
+		lCursor = { fg = c.bg, bg = c.blue },
+		CursorIM = { fg = c.bg, bg = c.blue },
+		CursorColumn = { bg = c.cursor_line },
+		CursorLine = { bg = c.cursor_line },
+		CursorLineNr = { fg = c.fg, },
+		Directory = { fg = c.blue, },
 		-- EndOfBuffer
-	hl(0, "ErrorMsg", { fg = c.fg, bg = 'NONE' })
-	hl(0, "VertSplit", { fg = c.vertsplit, bg = c.vertsplit })
-	hl(0, "Folded", { fg = c.fg, bg = 'NONE' })
-	hl(0, "FoldColumn", { fg = c.fg, bg = 'NONE' })
-	hl(0, "SignColumn", { fg = c.fg, bg = 'NONE' })
-	-- hl(0, "SignColumnSB", { fg = c.fg, bg = 'NONE' })
+		ErrorMsg = { fg = c.fg, },
+		VertSplit = { fg = c.vertsplit, bg = c.vertsplit },
+		Folded = { fg = c.fg, },
+		FoldColumn = { fg = c.fg, },
+		SignColumn = { fg = c.fg, },
+		-- SignColumnSB= { fg = c.fg,  },
 		-- Substitute
-	hl(0, "LineNr", { fg = c.gutter_fg, bg = c.gutter_bg })
+		LineNr = { fg = c.gutter_fg, bg = c.gutter_bg },
 		-- CursorLineNR
-	hl(0, "MatchParen", { fg = c.fg, bg = 'NONE', underline = true, })
-	hl(0, "ModeMsg", { fg = c.fg, bg = 'NONE' })
+		MatchParen = { fg = c.fg, underline = true, },
+		ModeMsg = { fg = c.fg, },
 		-- MsgSeparator
-	hl(0, "MoreMsg", { fg = c.fg, bg = 'NONE' })
-	hl(0, "NonText", { fg = c.non_text, bg = 'NONE' })
-	hl(0, "Normal", { fg = c.fg, bg = c.bg })
+		MoreMsg = { fg = c.fg, },
+		NonText = { fg = c.non_text, },
+		Normal = { fg = c.fg, bg = c.bg },
 		-- NormalNC
 		-- NoramlSB
-	hl(0, "NormalFloat", { fg = c.comment_fg, bg = c.bg })
+		NormalFloat = { fg = c.comment_fg, bg = c.bg },
 		-- FloatBorder
 		-- FloatTitle
-	hl(0, "Pmenu", { fg = c.comment_fg, bg = c.bg })
-	hl(0, "PmenuSel", { fg = 'NONE', bg = c.selection })
-	hl(0, "PmenuSbar", { fg = c.selection, bg = 'NONE' })
-	hl(0, "PmenuThumb", { fg = c.selection, bg = 'NONE' })
-	hl(0, "Question", { fg = c.magenta, bg = 'NONE' })
+		Pmenu = { fg = c.comment_fg, bg = c.bg },
+		PmenuSel = { bg = c.selection },
+		PmenuSbar = { fg = c.selection, },
+		PmenuThumb = { fg = c.selection, },
+		Question = { fg = c.purple, },
 		--QuickFixLine
-	hl(0, "Search", { fg = c.bg, bg = c.yellow })
-	hl(0, "IncSearch", { fg = c.bg, bg = c.yellow })
+		Search = { fg = c.bg, bg = c.yellow },
+		IncSearch = { fg = c.bg, bg = c.yellow },
 		-- CurSearch
-	hl(0, "SpecialKey", { fg = c.fg, bg = 'NONE' })
-	hl(0, "SpellBad", { fg = c.red, bg = 'NONE' })
-	hl(0, "SpellCap", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "SpellLocal", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "SpellRare", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "StatusLine", { fg = c.blue, bg = c.cursor_line })
-	hl(0, "StatusLineNC", { fg = c.comment_fg, bg = c.cursor_line })
-	hl(0, "TabLine", { fg = c.comment_fg, bg = c.cursor_line })
-	hl(0, "TabLineFill", { fg = c.comment_fg, bg = c.cursor_line })
-	hl(0, "TabLineSel", { fg = c.fg, bg = c.bg })
+		SpecialKey = { fg = c.fg, },
+		SpellBad = { fg = c.red, },
+		SpellCap = { fg = c.yellow, },
+		SpellLocal = { fg = c.yellow, },
+		SpellRare = { fg = c.yellow, },
+		StatusLine = { fg = c.blue, bg = c.cursor_line },
+		StatusLineNC = { fg = c.comment_fg, bg = c.cursor_line },
+		TabLine = { fg = c.comment_fg, bg = c.cursor_line },
+		TabLineFill = { fg = c.comment_fg, bg = c.cursor_line },
+		TabLineSel = { fg = c.fg, bg = c.bg },
 		-- TermCursor
 		-- TermCursorNC
-	hl(0, "Title", { fg = c.green, bg = 'NONE' })
-	hl(0, "Visual", { fg = 'NONE', bg = c.selection })
-	hl(0, "VisualNOS", { fg = 'NONE', bg = c.selection })
-	hl(0, "WarningMsg", { fg = c.red, bg = 'NONE' })
-	hl(0, "Whitespace", { fg = c.non_text, bg = 'NONE' })
-
-	hl(0, "WildMenu", { fg = c.fg, bg = 'NONE' })
+		Title = { fg = c.green, },
+		Visual = { bg = c.selection },
+		VisualNOS = { bg = c.selection },
+		WarningMsg = { fg = c.red, },
+		Whitespace = { fg = c.non_text, },
+		WildMenu = { fg = c.fg, },
 		-- WinBar
 		-- WinBarNc
 		-- WinSeparator
+
+
+
+
+		-- PmenuKind = { link = 'Pmenu' },
+		-- PmenuKindSel = { link = 'PmenuSel' },
+		-- PmenuExtra = { link = 'Pmenu' },
+		-- PmenuExtraSel = { link = 'PmenuSel' },
 
 	}
 end
