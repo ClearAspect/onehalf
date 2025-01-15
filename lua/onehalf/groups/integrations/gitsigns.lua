@@ -4,18 +4,18 @@ function M.get()
 	local c = require("onehalf.util").get_colors()
 
 	return {
-		GitSignsAdd = { fg = c.green, bg = 'NONE' },
-		GitSignsAddNr = { fg = c.green, bg = 'NONE' },
-		GitSignsAddLn = { fg = 'NONE', bg = c.green },
-		GitSignsAddCul = { fg = 'NONE', bg = c.green },
-		GitSignsChange = { fg = c.yellow, bg = 'NONE' },
-		GitSignsChangeNr = { fg = c.yellow, bg = 'NONE' },
-		GitSignsChangeLn = { fg = 'NONE', bg = c.yellow },
-		GitSignsChangeCul = { fg = 'NONE', bg = c.yellow },
-		GitSignsDelete = { fg = c.red, bg = 'NONE' },
-		GitSignsDeleteNr = { fg = c.red, bg = 'NONE' },
-		GitSignsDeleteLn = { fg = 'NONE', bg = c.red },
-		GitSignsDeleteCul = { fg = 'NONE', bg = c.red },
+		GitSignsAdd = { fg = c.green, },
+		GitSignsAddNr = { fg = c.green, },
+		GitSignsAddLn = { bg = c.green },
+		GitSignsAddCul = { bg = c.green },
+		GitSignsChange = { fg = c.yellow, },
+		GitSignsChangeNr = { fg = c.yellow, },
+		GitSignsChangeLn = { bg = c.yellow },
+		GitSignsChangeCul = { bg = c.yellow },
+		GitSignsDelete = { fg = c.red, },
+		GitSignsDeleteNr = { fg = c.red, },
+		GitSignsDeleteLn = { bg = c.red },
+		GitSignsDeleteCul = { bg = c.red },
 	}
 end
 
