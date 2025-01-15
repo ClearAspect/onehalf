@@ -1,7 +1,36 @@
 # OneHalf
 
-Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme. However, I've added support for some plugins and tweaked a few highlight groups that were a bit of an eye sore.
+The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme with added support for some plugins and tweaks to improve highlights
 
+- Images are coming
+
+# Installation
+
+You can install this plugin using your preferred plugin manager. For example:
+
+For those using lazy:
+
+```lua
+{
+    'clearaspect/onehalf',
+    lazy = false,
+    priority = 1000,
+}
+```
+
+For those using packer:
+
+```lua
+use { 'clearaspect/onehalf' }
+```
+
+For vim-plug:
+
+```vim
+Plug 'clearaspect/onehalf'
+```
+
+After installation, set the colorscheme with: `colorscheme onehalf`
 
 # Features
 
@@ -25,4 +54,5 @@ Mostly the same as [sonph](https://github.com/sonph/onehalf)'s OneHalf colorsche
 # Todo
 
 - Adjust Neogit and Diffview highlighting.
-- fix Bufferline background
+- Fix Bufferline background
+- Setup Function
