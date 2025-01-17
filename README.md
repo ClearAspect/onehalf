@@ -2,8 +2,9 @@
 
 The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme with added support for some plugins and tweaks to improve highlights
 
-- Images are coming
+> **:warning: Warning**: This colorscheme is still under active development. If you encounter any issues, PLEASE open an issue.
 
+- Images are coming
 # Installation
 
 You can install this plugin using your preferred plugin manager. For example:
