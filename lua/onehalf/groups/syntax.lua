@@ -13,7 +13,7 @@ function M.get()
 		Character = { fg = c.green, },             -- a character constant: 'c', '\n'
 		Number = { fg = c.yellow, },               -- a number constant: 234, 0xff
 		Float = { fg = c.yellow, },                -- a floating point constant: 2.3e10
-		Boolean = { fg = c.yellow, },              -- a boolean constant: TRUE, false
+		Boolean = { fg = c.cyan, },                -- a boolean constant: TRUE, false
 		Identifier = { fg = c.red, },              -- (preferred) any variable name
 		Function = { fg = c.blue, },               -- function name (also: methods for classes)
 		Statement = { fg = c.purple, },            -- (preferred) any statement
@@ -74,10 +74,10 @@ function M.get()
 		diffFile = { fg = c.blue },
 		diffLine = { fg = c.comment_fg },
 		diffIndexLine = { fg = c.comment_fg },
-		DiffAdd = { fg = c.green, }, -- diff mode: Added line
-		DiffChange = { fg = c.yellow, }, -- diff mode: Changed line
-		DiffDelete = { fg = c.red, }, -- diff mode: Deleted line
-		DiffText = { fg = c.blue, }, -- diff mode: Changed text within a changed line
+		DiffAdd = { bg = require("onehalf.util").blend_colors(c.green, c.bg, 0.25) }, -- diff mode: Added line
+		DiffChange = { bg = require("onehalf.util").blend_colors(c.yellow, c.bg, 0.25) }, -- diff mode: Changed line
+		DiffDelete = { bg = require("onehalf.util").blend_colors(c.red, c.bg, 0.25) }, -- diff mode: Deleted line
+		DiffText = { bg = require("onehalf.util").blend_colors(c.blue, c.bg, 0.25) }, -- diff mode: Changed text within a changed line
 
 		-- healthError
 		-- healthSuccess
