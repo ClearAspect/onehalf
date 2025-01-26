@@ -35,6 +35,20 @@ theme.set_highlights = function()
 		hl(0, group, colors)
 	end
 
+
+
+	-- Cmp
+	local cmp = require("onehalf.groups.integrations.cmp").get()
+	for group, colors in pairs(cmp) do
+		hl(0, group, colors)
+	end
+
+	-- Diffview
+	local diffview = require("onehalf.groups.integrations.diffview").get()
+	for group, colors in pairs(diffview) do
+		hl(0, group, colors)
+	end
+
 	-- Whichkey
 	hl(0, "WhichKey", { fg = c.red, bg = c.bg })
 	hl(0, "WhichKeyBorder", { fg = c.fg, bg = c.bg })
