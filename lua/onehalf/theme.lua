@@ -55,17 +55,11 @@ theme.set_highlights = function()
 		hl(0, group, colors)
 	end
 
-
 	-- Whichkey
-	hl(0, "WhichKey", { fg = c.red, bg = c.bg })
-	hl(0, "WhichKeyBorder", { fg = c.fg, bg = c.bg })
-	hl(0, "WhichKeyDesc", { fg = c.blue, bg = 'NONE' })
-	hl(0, "WhichKeyGroup", { fg = c.yellow, bg = 'NONE' })
-	hl(0, "WhichKeyIcon", { fg = c.fg, bg = 'NONE' })
-	hl(0, "WhichKeyNormal", { fg = c.red, bg = c.bg })
-	hl(0, "WhichKeySeparator", { fg = c.green, bg = 'NONE' })
-	hl(0, "WhichKeyTitle", { fg = c.blue, bg = 'NONE' })
-	hl(0, "WhichKeyValue", { fg = c.green, bg = 'NONE' })
+	local whichkey = require("onehalf.groups.integrations.whichkey").get()
+	for group, colors in pairs(whichkey) do
+		hl(0, group, colors)
+	end
 
 	-- Telescope
 	hl(0, "TelescopeSelection", { fg = c.blue, bg = 'NONE' })
