@@ -62,9 +62,10 @@ theme.set_highlights = function()
 	end
 
 	-- Telescope
-	hl(0, "TelescopeSelection", { fg = c.blue, bg = 'NONE' })
-	hl(0, "TelescopeMatching", { fg = c.yellow, bg = 'NONE', bold = true, })
-	hl(0, "TelescopeBorder", { fg = c.blue, bg = c.bg })
+	local telescope = require("onehalf.groups.integrations.telescope").get()
+	for group, colors in pairs(telescope) do
+		hl(0, group, colors)
+	end
 
 	-- StatusLine
 	hl(0, "StatusLineSeparator", { fg = c.black, bg = 'NONE' })
