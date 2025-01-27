@@ -1,52 +1,52 @@
 local M = {}
 
 function M.get()
-	local c = require("onehalf.util").get_colors()
+	local C = require("onehalf.util").get_colors()
 
 
 	return {
 
-		Comment = { fg = c.comment_fg, italic = true, }, -- Comments
-		SpecialComment = { fg = c.fg, },           -- Special things inside comments
-		Constant = { fg = c.cyan, },               -- (preferred) any constant
-		String = { fg = c.green, },                -- a string constant: "this is a string"
-		Character = { fg = c.green, },             -- a character constant: 'c', '\n'
-		Number = { fg = c.yellow, },               -- a number constant: 234, 0xff
-		Float = { fg = c.yellow, },                -- a floating point constant: 2.3e10
-		Boolean = { fg = c.cyan, },                -- a boolean constant: TRUE, false
-		Identifier = { fg = c.red, },              -- (preferred) any variable name
-		Function = { fg = c.blue, },               -- function name (also: methods for classes)
-		Statement = { fg = c.purple, },            -- (preferred) any statement
-		Conditional = { fg = c.purple, },          -- if, then, else, endif, switch, etc.
-		Repeat = { fg = c.purple, },               -- for, do, while, etc.
-		Label = { fg = c.purple, },                -- case, default, etc.
-		Operator = { fg = c.fg, },                 -- "sizeof", "+", "*", etc.
-		Keyword = { fg = c.red, },                 -- any other keyword
-		Exception = { fg = c.red, },               -- try, catch, throw
+		Comment = { fg = C.comment_fg, italic = true, }, -- Comments
+		SpecialComment = { fg = C.fg, },           -- Special things inside comments
+		Constant = { fg = C.cyan, },               -- (preferred) any constant
+		String = { fg = C.green, },                -- a string constant: "this is a string"
+		Character = { fg = C.green, },             -- a character constant: 'c', '\n'
+		Number = { fg = C.yellow, },               -- a number constant: 234, 0xff
+		Float = { fg = C.yellow, },                -- a floating point constant: 2.3e10
+		Boolean = { fg = C.cyan, },                -- a boolean constant: TRUE, false
+		Identifier = { fg = C.red, },              -- (preferred) any variable name
+		Function = { fg = C.blue, },               -- function name (also: methods for classes)
+		Statement = { fg = C.purple, },            -- (preferred) any statement
+		Conditional = { fg = C.purple, },          -- if, then, else, endif, switch, etc.
+		Repeat = { fg = C.purple, },               -- for, do, while, etc.
+		Label = { fg = C.purple, },                -- case, default, etc.
+		Operator = { fg = C.fg, },                 -- "sizeof", "+", "*", etc.
+		Keyword = { fg = C.red, },                 -- any other keyword
+		Exception = { fg = C.red, },               -- try, catch, throw
 
-		PreProc = { fg = c.yellow, },              -- (preferred) generic Preprocessor
-		Include = { fg = c.purple, },              -- preprocessor #include
-		Define = { fg = c.purple, },               -- preprocessor #define
-		Macro = { fg = c.purple, },                -- same as Define
-		PreCondit = { fg = c.yellow, },            -- preprocessor #if, #else, #endif, etc.
+		PreProc = { fg = C.yellow, },              -- (preferred) generic Preprocessor
+		Include = { fg = C.purple, },              -- preprocessor #include
+		Define = { fg = C.purple, },               -- preprocessor #define
+		Macro = { fg = C.purple, },                -- same as Define
+		PreCondit = { fg = C.yellow, },            -- preprocessor #if, #else, #endif, etc.
 
-		StorageClass = { fg = c.yellow, },         -- static, register, volatile, etc.
-		Structure = { fg = c.yellow, },            -- struct, union, enum, etc.
-		Special = { fg = c.blue, },                -- any special symbol
-		Type = { fg = c.yellow, },                 -- int, long, char, etc.
-		Typedef = { fg = c.yellow, },              -- A typedef
-		SpecialChar = { fg = c.fg, },              -- special character in a constant
-		Tag = { fg = c.fg, },                      -- you can use CTRL-] on this
-		Delimiter = { fg = c.fg, },                -- character that needs attention
-		Debug = { fg = c.fg, },                    -- debugging statements
+		StorageClass = { fg = C.yellow, },         -- static, register, volatile, etc.
+		Structure = { fg = C.yellow, },            -- struct, union, enum, etc.
+		Special = { fg = C.blue, },                -- any special symbol
+		Type = { fg = C.yellow, },                 -- int, long, char, etc.
+		Typedef = { fg = C.yellow, },              -- A typedef
+		SpecialChar = { fg = C.fg, },              -- special character in a constant
+		Tag = { fg = C.fg, },                      -- you can use CTRL-] on this
+		Delimiter = { fg = C.fg, },                -- character that needs attention
+		Debug = { fg = C.fg, },                    -- debugging statements
 
 		Underlined = { underline = true },         -- (preferred) text that stands out, HTML links
 		Bold = { bold = true },                    -- (preferred) any bold text
 		Italic = { italic = true },                -- (preferred) any italic text
 		-- Ignore = { fg = c.fg,  }, 			
 
-		Error = { fg = c.red, bg = c.gutter_bg }, -- (preferred) any erroneous construct
-		Todo = { fg = c.purple, },          -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error = { fg = C.red, bg = C.gutter_bg }, -- (preferred) any erroneous construct
+		Todo = { fg = C.purple, },          -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		-- qfLineNr
 		-- qfFileName
 		-- htmlH1
@@ -66,18 +66,18 @@ function M.get()
 		-- illumaniatedWord
 		-- illuminatedCurWord
 		-- diff
-		diffAdded = { fg = c.green },
-		diffRemoved = { fg = c.red },
-		diffChanged = { fg = c.yellow },
-		diffOldFile = { fg = c.blue },
-		diffNewFile = { fg = c.blue },
-		diffFile = { fg = c.blue },
-		diffLine = { fg = c.comment_fg },
-		diffIndexLine = { fg = c.comment_fg },
-		DiffAdd = { bg = require("onehalf.util").blend_colors(c.green, c.bg, 0.25) }, -- diff mode: Added line
-		DiffChange = { bg = require("onehalf.util").blend_colors(c.yellow, c.bg, 0.25) }, -- diff mode: Changed line
-		DiffDelete = { bg = require("onehalf.util").blend_colors(c.red, c.bg, 0.25) }, -- diff mode: Deleted line
-		DiffText = { bg = require("onehalf.util").blend_colors(c.blue, c.bg, 0.25) }, -- diff mode: Changed text within a changed line
+		diffAdded = { fg = C.green },
+		diffRemoved = { fg = C.red },
+		diffChanged = { fg = C.yellow },
+		diffOldFile = { fg = C.blue },
+		diffNewFile = { fg = C.blue },
+		diffFile = { fg = C.blue },
+		diffLine = { fg = C.comment_fg },
+		diffIndexLine = { fg = C.comment_fg },
+		DiffAdd = { bg = require("onehalf.util").blend_colors(C.green, C.bg, 0.25) }, -- diff mode: Added line
+		DiffChange = { bg = require("onehalf.util").blend_colors(C.yellow, C.bg, 0.25) }, -- diff mode: Changed line
+		DiffDelete = { bg = require("onehalf.util").blend_colors(C.red, C.bg, 0.25) }, -- diff mode: Deleted line
+		DiffText = { bg = require("onehalf.util").blend_colors(C.blue, C.bg, 0.25) }, -- diff mode: Changed text within a changed line
 
 		-- healthError
 		-- healthSuccess

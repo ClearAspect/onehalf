@@ -1,67 +1,67 @@
 local M = {}
 
 function M.get()
-	local c = require("onehalf.util").get_colors()
+	local C = require("onehalf.util").get_colors()
 
 	return {
 
-		ColorColumn = { bg = c.color_col },
-		Conceal = { fg = c.fg, },
-		Cursor = { fg = c.bg, bg = c.blue },
-		lCursor = { fg = c.bg, bg = c.blue },
-		CursorIM = { fg = c.bg, bg = c.blue },
-		CursorColumn = { bg = c.cursor_line },
-		CursorLine = { bg = c.cursor_line },
-		CursorLineNr = { fg = c.fg, },
-		Directory = { fg = c.blue, },
+		ColorColumn = { bg = C.color_col },
+		Conceal = { fg = C.fg, },
+		Cursor = { fg = C.bg, bg = C.blue },
+		lCursor = { fg = C.bg, bg = C.blue },
+		CursorIM = { fg = C.bg, bg = C.blue },
+		CursorColumn = { bg = C.cursor_line },
+		CursorLine = { bg = C.cursor_line },
+		CursorLineNr = { fg = C.fg, },
+		Directory = { fg = C.blue, },
 		-- EndOfBuffer
-		ErrorMsg = { fg = c.fg, },
-		VertSplit = { fg = c.vertsplit, bg = c.vertsplit },
-		Folded = { fg = c.fg, },
-		FoldColumn = { fg = c.fg, },
-		SignColumn = { fg = c.fg, },
+		ErrorMsg = { fg = C.fg, },
+		VertSplit = { fg = C.vertsplit, bg = C.vertsplit },
+		Folded = { fg = C.fg, },
+		FoldColumn = { fg = C.fg, },
+		SignColumn = { fg = C.fg, },
 		-- SignColumnSB= { fg = c.fg,  },
 		-- Substitute
-		LineNr = { fg = c.gutter_fg, bg = c.gutter_bg },
+		LineNr = { fg = C.gutter_fg, bg = C.gutter_bg },
 		-- CursorLineNR
-		MatchParen = { fg = c.fg, underline = true, },
-		ModeMsg = { fg = c.fg, },
+		MatchParen = { fg = C.fg, underline = true, },
+		ModeMsg = { fg = C.fg, },
 		-- MsgSeparator
-		MoreMsg = { fg = c.fg, },
-		NonText = { fg = c.non_text, },
-		Normal = { fg = c.fg, bg = c.bg },
+		MoreMsg = { fg = C.fg, },
+		NonText = { fg = C.non_text, },
+		Normal = { fg = C.fg, bg = C.bg },
 		-- NormalNC
 		-- NoramlSB
-		NormalFloat = { fg = c.comment_fg, bg = c.bg },
+		NormalFloat = { fg = C.comment_fg, bg = C.bg },
 		-- FloatBorder
 		-- FloatTitle
-		Pmenu = { fg = c.comment_fg, bg = c.bg },
-		PmenuSel = { bg = c.selection },
-		PmenuSbar = { fg = c.selection, },
-		PmenuThumb = { fg = c.selection, },
-		Question = { fg = c.purple, },
+		Pmenu = { fg = C.comment_fg, bg = C.bg },
+		PmenuSel = { bg = C.selection },
+		PmenuSbar = { fg = C.selection, },
+		PmenuThumb = { fg = C.selection, },
+		Question = { fg = C.purple, },
 		--QuickFixLine
-		Search = { fg = c.bg, bg = c.yellow },
-		IncSearch = { fg = c.bg, bg = c.yellow },
+		Search = { fg = C.bg, bg = C.yellow },
+		IncSearch = { fg = C.bg, bg = C.yellow },
 		-- CurSearch
-		SpecialKey = { fg = c.fg, },
-		SpellBad = { fg = c.red, },
-		SpellCap = { fg = c.yellow, },
-		SpellLocal = { fg = c.yellow, },
-		SpellRare = { fg = c.yellow, },
-		StatusLine = { fg = c.blue, bg = c.cursor_line },
-		StatusLineNC = { fg = c.comment_fg, bg = c.cursor_line },
-		TabLine = { fg = c.comment_fg, bg = c.cursor_line },
-		TabLineFill = { fg = c.comment_fg, bg = c.cursor_line },
-		TabLineSel = { fg = c.fg, bg = c.bg },
+		SpecialKey = { fg = C.fg, },
+		SpellBad = { fg = C.red, },
+		SpellCap = { fg = C.yellow, },
+		SpellLocal = { fg = C.yellow, },
+		SpellRare = { fg = C.yellow, },
+		StatusLine = { fg = C.blue, bg = C.cursor_line },
+		StatusLineNC = { fg = C.comment_fg, bg = C.cursor_line },
+		TabLine = { fg = C.comment_fg, bg = C.cursor_line },
+		TabLineFill = { fg = C.comment_fg, bg = C.cursor_line },
+		TabLineSel = { fg = C.fg, bg = C.bg },
 		-- TermCursor
 		-- TermCursorNC
-		Title = { fg = c.green, },
-		Visual = { bg = c.selection },
-		VisualNOS = { bg = c.selection },
-		WarningMsg = { fg = c.red, },
-		Whitespace = { fg = c.non_text, },
-		WildMenu = { fg = c.fg, },
+		Title = { fg = C.green, },
+		Visual = { bg = C.selection },
+		VisualNOS = { bg = C.selection },
+		WarningMsg = { fg = C.red, },
+		Whitespace = { fg = C.non_text, },
+		WildMenu = { fg = C.fg, },
 		-- WinBar
 		-- WinBarNc
 		-- WinSeparator

@@ -13,7 +13,7 @@ groups are derived from the token's type and modifiers:
 local M = {}
 
 function M.get()
-	local c = require("onehalf.util").get_colors()
+	local C = require("onehalf.util").get_colors()
 
 	return {
 		-- Identifiers
