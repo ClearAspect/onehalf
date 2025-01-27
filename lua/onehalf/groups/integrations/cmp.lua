@@ -1,22 +1,22 @@
 local M = {}
 
 function M.get()
-	local c = require("onehalf.util").get_colors()
+	local C = require("onehalf.util").get_colors()
 
 	return {
 
 
-		CmpGhostText = { fg = c.comment_fg, bg = 'NONE' },
+		CmpGhostText = { fg = C.comment_fg, bg = 'NONE' },
 
-		CmpItemAbbr = { fg = c.fg },
-		CmpItemAbbrDeprecated = { fg = c.comment_fg, strikethrough = true },
-		CmpItemKind = { fg = c.fg },
-		CmpItemMenu = { fg = c.fg },
-		CmpItemAbbrMatch = { fg = c.fg, bold = true },
-		CmpItemAbbrMatchFuzzy = { fg = c.fg, bold = true },
+		CmpItemAbbr = { fg = C.fg },
+		CmpItemAbbrDeprecated = { fg = C.comment_fg, strikethrough = true },
+		CmpItemKind = { fg = C.fg },
+		CmpItemMenu = { fg = C.fg },
+		CmpItemAbbrMatch = { fg = C.fg, bold = true },
+		CmpItemAbbrMatchFuzzy = { fg = C.fg, bold = true },
 
 		-- kind support
-		CmpItemKindSnippet = { fg = c.purple },
+		CmpItemKindSnippet = { fg = C.purple },
 		CmpItemKindKeyword = { link = 'Keyword' },
 		CmpItemKindText = { link = 'String' },
 		CmpItemKindMethod = { link = 'Function' },

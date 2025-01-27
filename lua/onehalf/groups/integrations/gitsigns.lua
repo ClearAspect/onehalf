@@ -1,21 +1,21 @@
 local M = {}
 
 function M.get()
-	local c = require("onehalf.util").get_colors()
+	local C = require("onehalf.util").get_colors()
 
 	return {
-		GitSignsAdd = { fg = c.green, },
-		GitSignsAddNr = { fg = c.green, },
-		GitSignsAddLn = { bg = c.green },
-		GitSignsAddCul = { bg = c.green },
-		GitSignsChange = { fg = c.yellow, },
-		GitSignsChangeNr = { fg = c.yellow, },
-		GitSignsChangeLn = { bg = c.yellow },
-		GitSignsChangeCul = { bg = c.yellow },
-		GitSignsDelete = { fg = c.red, },
-		GitSignsDeleteNr = { fg = c.red, },
-		GitSignsDeleteLn = { bg = c.red },
-		GitSignsDeleteCul = { bg = c.red },
+		GitSignsAdd = { fg = C.green, },
+		GitSignsAddNr = { fg = C.green, },
+		GitSignsAddLn = { bg = C.green },
+		GitSignsAddCul = { bg = C.green },
+		GitSignsChange = { fg = C.yellow, },
+		GitSignsChangeNr = { fg = C.yellow, },
+		GitSignsChangeLn = { bg = C.yellow },
+		GitSignsChangeCul = { bg = C.yellow },
+		GitSignsDelete = { fg = C.red, },
+		GitSignsDeleteNr = { fg = C.red, },
+		GitSignsDeleteLn = { bg = C.red },
+		GitSignsDeleteCul = { bg = C.red },
 	}
 end
 

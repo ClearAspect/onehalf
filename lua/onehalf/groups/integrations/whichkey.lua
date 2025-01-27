@@ -1,21 +1,21 @@
 local M = {}
 
 function M.get()
-	local c = require("onehalf.util").get_colors()
+	local C = require("onehalf.util").get_colors()
 
 	return {
 
 		WhichKey = { link = "NormalFloat" },
 		WhichKeyBorder = { link = "FloatBorder" },
 
-		WhichKeyGroup = { fg = c.yellow },
-		WhichKeySeparator = { fg = c.green },
-		WhichKeyDesc = { fg = c.blue },
-		WhichKeyValue = { fg = c.green },
+		WhichKeyGroup = { fg = C.yellow },
+		WhichKeySeparator = { fg = C.green },
+		WhichKeyDesc = { fg = C.blue },
+		WhichKeyValue = { fg = C.green },
 
-		WhichKeyIcon = { fg = c.fg },
-		WhichKeyNormal = { fg = c.red },
-		WhichKeyTitle = { fg = c.blue },
+		WhichKeyIcon = { fg = C.fg },
+		WhichKeyNormal = { fg = C.red },
+		WhichKeyTitle = { fg = C.blue },
 
 	}
 end
