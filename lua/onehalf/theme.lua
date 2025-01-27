@@ -67,10 +67,11 @@ theme.set_highlights = function()
 		hl(0, group, colors)
 	end
 
-	-- StatusLine
-	hl(0, "StatusLineSeparator", { fg = c.black, bg = 'NONE' })
-	hl(0, "StatusLineTerm", { fg = c.black, bg = 'NONE' })
-	hl(0, "StatusLineTermNC", { fg = c.black, bg = 'NONE' })
+	-- fzf
+	local fzf = require("onehalf.groups.integrations.fzf").get()
+	for group, colors in pairs(fzf) do
+		hl(0, group, colors)
+	end
 end
 
 return theme
