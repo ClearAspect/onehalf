@@ -1,10 +1,11 @@
 # OneHalf
 
-The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme with added support for some plugins and tweaks to improve highlights
+The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme, but written in lua with added support for plugins and tweaks to improve highlights
 
-> **:warning: Warning**: This colorscheme is still under active development. If you encounter any issues, PLEASE open an issue.
+<img width="1624" alt="onehalfrepoheader" src="https://github.com/user-attachments/assets/31be93b5-4d39-4e39-b964-17b67bb988f8" />
 
-- Images are coming
+> **:warning: Warning**: This has only been tested with my own custom configuration. If you encounter any problems or have any requests, PLEASE open an issue.
+
 # Installation
 
 You can install this plugin using your preferred plugin manager. For example:
@@ -33,7 +34,7 @@ Plug 'clearaspect/onehalf'
 
 After installation, set the colorscheme with: `colorscheme onehalf`
 
-# Features
+# Integrations
 
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
@@ -46,14 +47,25 @@ After installation, set the colorscheme with: `colorscheme onehalf`
 - [Neogit](https://github.com/TimUntersberger/neogit)
 - [Blink Completion](https://github.com/Saghen/blink.cmp)
 
-# Changes
+# Changes from the original
 
 - Reduced the contrast of delimiter colors for improved visual comfort
-- Added highlight groups for UI components to enhance plugin compatibility
-- Implemented completion menu highlight groups (Tested with Blink Completion, should also work with nvim-cmp)
+- Built modular infrastructure for easy plugin integration
+- Refined UI element highlighting for better consistency
+- Added smart color blending for diff views and git changes
+- Extended support for modern Neovim plugins
+- Maintained the original OneHalf palette while improving readability
 
 # Todo
 
 - Adjust Neogit and Diffview highlighting.
 - Fix Bufferline background
 - Setup Function
+
+# Credits
+
+- [sonph](https://github.com/sonph/onehalf) - Creator of the original OneHalf color palette
+- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) - Project structure inspiration
+- [catppuccin/nvim](https://github.com/catppuccin/nvim) - Project structure inspiration
+
+This project wouldn't be possible without the beautiful OneHalf color palette created by sonph, and the excellent project structure examples from the tokyonight and catppuccin Neovim themes.
