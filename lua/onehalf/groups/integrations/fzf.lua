@@ -1,8 +1,6 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
+function M.get(C, O)
 	return {
 		-- FzfLuaNormal = { link = "NormalFloat" }, Respect fzf-lua's default float bg
 		FzfLuaBorder = { link = "FloatBorder" },
