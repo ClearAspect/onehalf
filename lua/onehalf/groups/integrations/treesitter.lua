@@ -1,9 +1,6 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
-
+function M.get(C, O)
 	--[[
 		@annotationxxx cleared
 		@repeatxxx cleared
@@ -34,21 +31,21 @@ function M.get()
 		["@label"] = { link = "Label" },         -- For labels: label: in C and :label: in Lua.
 
 		-- Literals
-		["@string"] = { link = "String" },                                    -- For strings.
-		["@string.documentation"] = { fg = C.fg },                            -- For strings documenting code (e.g. Python docstrings).
-		["@string.regexp"] = { link = "String" },                             -- For regexes.
-		["@string.escape"] = { link = "String" },                             -- For escape characters within a string.
-		["@string.special"] = { link = "Special" },                           -- other special strings (e.g. dates)
-		["@string.special.path"] = { link = "Special" },                      -- filenames
-		["@string.special.symbol"] = { fg = C.fg },                           -- symbols or atoms
-		["@string.special.url"] = { fg = C.cyan, italic = true, underline = true }, -- urls, links and emails
+		["@string"] = { link = "String" },                                        -- For strings.
+		["@string.documentation"] = { fg = C.fg },                                -- For strings documenting code (e.g. Python docstrings).
+		["@string.regexp"] = { link = "String" },                                 -- For regexes.
+		["@string.escape"] = { link = "String" },                                 -- For escape characters within a string.
+		["@string.special"] = { link = "Special" },                               -- other special strings (e.g. dates)
+		["@string.special.path"] = { link = "Special" },                          -- filenames
+		["@string.special.symbol"] = { fg = C.fg },                               -- symbols or atoms
+		["@string.special.url"] = { fg = C.cyan, styles = { "italic", "underline" }, }, -- urls, links and emails
 
-		["@character"] = { link = "Character" },                              -- character literals
-		["@character.special"] = { link = "SpecialChar" },                    -- special characters (e.g. wildcards)
+		["@character"] = { link = "Character" },                                  -- character literals
+		["@character.special"] = { link = "SpecialChar" },                        -- special characters (e.g. wildcards)
 
-		["@boolean"] = { link = "Boolean" },                                  -- For booleans.
-		["@number"] = { link = "Number" },                                    -- For all numbers
-		["@number.float"] = { link = "Float" },                               -- For floats.
+		["@boolean"] = { link = "Boolean" },                                      -- For booleans.
+		["@number"] = { link = "Number" },                                        -- For all numbers
+		["@number.float"] = { link = "Float" },                                   -- For floats.
 
 		-- Types
 		["@type"] = { link = "Type" },      -- For types.
@@ -108,24 +105,24 @@ function M.get()
 		["@comment.note"] = { fg = C.bg, bg = C.purple },
 
 		-- Markup
-		["@markup"] = { fg = C.fg },                                         -- For strings considerated text in a markup language.
-		["@markup.strong"] = { fg = C.red, bold = true },                    -- bold
-		["@markup.italic"] = { fg = C.red, italic = true },                  -- italic
-		["@markup.strikethrough"] = { fg = C.fg, strikethrough = true },     -- strikethrough text
-		["@markup.underline"] = { link = "Underlined" },                     -- underlined text
+		["@markup"] = { fg = C.fg },                                            -- For strings considerated text in a markup language.
+		["@markup.strong"] = { fg = C.red, styles = { "bold" } },               -- bold
+		["@markup.italic"] = { fg = C.red, styles = { "italic" } },             -- italic
+		["@markup.strikethrough"] = { fg = C.fg, styles = { "strikethrough" } }, -- strikethrough text
+		["@markup.underline"] = { link = "Underlined" },                        -- underlined text
 
-		["@markup.heading"] = { fg = C.blue, bold = true },                  -- titles like: # Example
+		["@markup.heading"] = { fg = C.blue, styles = { "bold" } },             -- titles like: # Example
 
-		["@markup.math"] = { fg = C.blue },                                  -- math environments (e.g. `$ ... $` in LaTeX)
-		["@markup.quote"] = { fg = C.red, bold = true },                     -- block quotes
-		["@markup.environment"] = { fg = C.purple },                         -- text environments of markup languages
-		["@markup.environment.name"] = { fg = C.blue },                      -- text indicating the type of an environment
+		["@markup.math"] = { fg = C.blue },                                     -- math environments (e.g. `$ ... $` in LaTeX)
+		["@markup.quote"] = { fg = C.red, styles = { "bold" } },                -- block quotes
+		["@markup.environment"] = { fg = C.purple },                            -- text environments of markup languages
+		["@markup.environment.name"] = { fg = C.blue },                         -- text indicating the type of an environment
 
-		["@markup.link"] = { link = "Tag" },                                 -- text references, footnotes, citations, etc.
-		["@markup.link.label"] = { link = "Label" },                         -- link, reference descriptions
-		["@markup.link.url"] = { fg = C.purple, italic = true, underline = true }, -- urls, links and emails
+		["@markup.link"] = { link = "Tag" },                                    -- text references, footnotes, citations, etc.
+		["@markup.link.label"] = { link = "Label" },                            -- link, reference descriptions
+		["@markup.link.url"] = { fg = C.purple, styles = { "italic", "underline" } }, -- urls, links and emails
 
-		["@markup.raw"] = { fg = C.cyan },                                   -- used for inline code in markdown and for doc in python (""")
+		["@markup.raw"] = { fg = C.cyan },                                      -- used for inline code in markdown and for doc in python (""")
 
 		["@markup.list"] = { link = "Special" },
 		["@markup.list.checked"] = { fg = C.green }, -- todo notes

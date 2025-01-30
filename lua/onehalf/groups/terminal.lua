@@ -1,8 +1,6 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
+function M.get(C, O)
 	return {
 
 		terminal_color_0 = C.black,

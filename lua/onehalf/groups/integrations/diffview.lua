@@ -1,8 +1,6 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
+function M.get(C, O)
 	return {
 
 		-- Basic UI
@@ -15,12 +13,12 @@ function M.get()
 		DiffviewSecondary = { link = "String" },
 
 		-- File panel
-		DiffviewFilePanelTitle = { fg = C.blue, bold = true },
+		DiffviewFilePanelTitle = { fg = C.blue, styles = { "bold" } },
 		DiffviewFilePanelCounter = { link = "Normal" },
 		DiffviewFilePanelFileName = { link = "Normal" },
 		DiffviewFilePanelPath = { link = "Comment" },
 		DiffviewFilePanelSelected = { link = "CursorLine" },
-		DiffviewFilePanelRootPath = { fg = C.purple, bold = true },
+		DiffviewFilePanelRootPath = { fg = C.purple, styles = { "bold" } },
 
 		-- File panel stats
 		DiffviewFilePanelInsertions = { link = "diffAdded" },
@@ -28,12 +26,12 @@ function M.get()
 		DiffviewFilePanelConflicts = { link = "diffChanged" },
 
 		-- Folders
-		DiffviewFolderName = { fg = C.blue, bold = true },
+		DiffviewFolderName = { fg = C.blue, styles = { "bold" } },
 		DiffviewFolderSign = { link = "DiffviewFolderName" },
 
 		-- Git elements
 		DiffviewHash = { link = "@constant" },
-		DiffviewReference = { fg = C.blue, bold = true },
+		DiffviewReference = { fg = C.blue, styles = { "bold" } },
 		DiffviewReflogSelector = { link = "@keyword" },
 
 		-- Status indicators

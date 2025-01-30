@@ -1,19 +1,17 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
+function M.get(C, O)
 	return {
 
 
 		CmpGhostText = { fg = C.comment_fg, bg = 'NONE' },
 
 		CmpItemAbbr = { fg = C.fg },
-		CmpItemAbbrDeprecated = { fg = C.comment_fg, strikethrough = true },
+		CmpItemAbbrDeprecated = { fg = C.comment_fg, styles = { "strikethrough" } },
 		CmpItemKind = { fg = C.fg },
 		CmpItemMenu = { fg = C.fg },
-		CmpItemAbbrMatch = { fg = C.fg, bold = true },
-		CmpItemAbbrMatchFuzzy = { fg = C.fg, bold = true },
+		CmpItemAbbrMatch = { fg = C.fg, styles = { "bold" } },
+		CmpItemAbbrMatchFuzzy = { fg = C.fg, styles = { "bold" } },
 
 		-- kind support
 		CmpItemKindSnippet = { fg = C.purple },
