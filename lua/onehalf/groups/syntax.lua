@@ -1,48 +1,45 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
-
+function M.get(C, O)
 	return {
 
-		Comment = { fg = C.comment_fg, italic = true, }, -- Comments
-		SpecialComment = { fg = C.fg, },           -- Special things inside comments
-		Constant = { fg = C.cyan, },               -- (preferred) any constant
-		String = { fg = C.green, },                -- a string constant: "this is a string"
-		Character = { fg = C.green, },             -- a character constant: 'c', '\n'
-		Number = { fg = C.yellow, },               -- a number constant: 234, 0xff
-		Float = { fg = C.yellow, },                -- a floating point constant: 2.3e10
-		Boolean = { fg = C.cyan, },                -- a boolean constant: TRUE, false
-		Identifier = { fg = C.red, },              -- (preferred) any variable name
-		Function = { fg = C.blue, },               -- function name (also: methods for classes)
-		Statement = { fg = C.purple, },            -- (preferred) any statement
-		Conditional = { fg = C.purple, },          -- if, then, else, endif, switch, etc.
-		Repeat = { fg = C.purple, },               -- for, do, while, etc.
-		Label = { fg = C.purple, },                -- case, default, etc.
-		Operator = { fg = C.fg, },                 -- "sizeof", "+", "*", etc.
-		Keyword = { fg = C.red, },                 -- any other keyword
-		Exception = { fg = C.red, },               -- try, catch, throw
+		Comment = { fg = C.comment_fg, styles = O.styles.comments }, -- Comments
+		SpecialComment = { fg = C.fg, },                       -- Special things inside comments
+		Constant = { fg = C.cyan, },                           -- (preferred) any constant
+		String = { fg = C.green, },                            -- a string constant: "this is a string"
+		Character = { fg = C.green, },                         -- a character constant: 'c', '\n'
+		Number = { fg = C.yellow, },                           -- a number constant: 234, 0xff
+		Float = { fg = C.yellow, },                            -- a floating point constant: 2.3e10
+		Boolean = { fg = C.cyan, },                            -- a boolean constant: TRUE, false
+		Identifier = { fg = C.red, },                          -- (preferred) any variable name
+		Function = { fg = C.blue, },                           -- function name (also: methods for classes)
+		Statement = { fg = C.purple, },                        -- (preferred) any statement
+		Conditional = { fg = C.purple, },                      -- if, then, else, endif, switch, etc.
+		Repeat = { fg = C.purple, },                           -- for, do, while, etc.
+		Label = { fg = C.purple, },                            -- case, default, etc.
+		Operator = { fg = C.fg, },                             -- "sizeof", "+", "*", etc.
+		Keyword = { fg = C.red, },                             -- any other keyword
+		Exception = { fg = C.red, },                           -- try, catch, throw
 
-		PreProc = { fg = C.yellow, },              -- (preferred) generic Preprocessor
-		Include = { fg = C.purple, },              -- preprocessor #include
-		Define = { fg = C.purple, },               -- preprocessor #define
-		Macro = { fg = C.purple, },                -- same as Define
-		PreCondit = { fg = C.yellow, },            -- preprocessor #if, #else, #endif, etc.
+		PreProc = { fg = C.yellow, },                          -- (preferred) generic Preprocessor
+		Include = { fg = C.purple, },                          -- preprocessor #include
+		Define = { fg = C.purple, },                           -- preprocessor #define
+		Macro = { fg = C.purple, },                            -- same as Define
+		PreCondit = { fg = C.yellow, },                        -- preprocessor #if, #else, #endif, etc.
 
-		StorageClass = { fg = C.yellow, },         -- static, register, volatile, etc.
-		Structure = { fg = C.yellow, },            -- struct, union, enum, etc.
-		Special = { fg = C.blue, },                -- any special symbol
-		Type = { fg = C.yellow, },                 -- int, long, char, etc.
-		Typedef = { fg = C.yellow, },              -- A typedef
-		SpecialChar = { fg = C.fg, },              -- special character in a constant
-		Tag = { fg = C.fg, },                      -- you can use CTRL-] on this
-		Delimiter = { fg = C.fg, },                -- character that needs attention
-		Debug = { fg = C.fg, },                    -- debugging statements
+		StorageClass = { fg = C.yellow, },                     -- static, register, volatile, etc.
+		Structure = { fg = C.yellow, },                        -- struct, union, enum, etc.
+		Special = { fg = C.blue, },                            -- any special symbol
+		Type = { fg = C.yellow, },                             -- int, long, char, etc.
+		Typedef = { fg = C.yellow, },                          -- A typedef
+		SpecialChar = { fg = C.fg, },                          -- special character in a constant
+		Tag = { fg = C.fg, },                                  -- you can use CTRL-] on this
+		Delimiter = { fg = C.fg, },                            -- character that needs attention
+		Debug = { fg = C.fg, },                                -- debugging statements
 
-		Underlined = { underline = true },         -- (preferred) text that stands out, HTML links
-		Bold = { bold = true },                    -- (preferred) any bold text
-		Italic = { italic = true },                -- (preferred) any italic text
+		Underlined = { styles = { "underline" } },             -- (preferred) text that stands out, HTML links
+		Bold = { styles = { "bold" } },                        -- (preferred) any bold text
+		Italic = { styles = { "italic" } },                    -- (preferred) any italic text
 		-- Ignore = { fg = c.fg,  }, 			
 
 		Error = { fg = C.red, bg = C.gutter_bg }, -- (preferred) any erroneous construct

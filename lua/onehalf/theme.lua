@@ -1,11 +1,8 @@
 local hl = vim.api.nvim_set_hl
+local palette = require("onehalf.util").get_colors()
 local theme = {}
 
-
-local integration_modules
-
-
-theme.set_highlights = function()
+theme.set_highlights = function(options)
 	-- Core editor highlights
 	local core_modules = {
 		"editor",
@@ -13,35 +10,51 @@ theme.set_highlights = function()
 	}
 
 	-- Integration highlights
-	integration_modules = {
-		"treesitter",
-		"semantic_tokens",
+	local integration_modules = {
 		"cmp",
 		"diffview",
-		"gitsigns",
-		"whichkey",
-		"telescope",
 		"fzf",
+		"gitsigns",
+		"semantic_tokens",
+		"telescope",
+		"treesitter",
+		"whichkey",
 	}
 
 	-- Load core modules
 	for _, module in ipairs(core_modules) do
-		local highlights = require("onehalf.groups." .. module).get()
+		local highlights = require("onehalf.groups." .. module).get(palette, options)
 		for group, colors in pairs(highlights) do
+			-- Parse styles string into individual properties
+			if colors.styles then
+				for _, style in ipairs(colors.styles) do
+					style = vim.trim(style)
+					colors[style] = true
+				end
+				colors.styles = nil
+			end
 			hl(0, group, colors)
 		end
 	end
 
 	-- Load terminal colors specially
-	local terminal = require("onehalf.groups.terminal").get()
+	local terminal = require("onehalf.groups.terminal").get(palette, options)
 	for key, color in pairs(terminal) do
 		vim.g[key] = color
 	end
 
 	-- Load integration modules
 	for _, module in ipairs(integration_modules) do
-		local highlights = require("onehalf.groups.integrations." .. module).get()
+		local highlights = require("onehalf.groups.integrations." .. module).get(palette, options)
 		for group, colors in pairs(highlights) do
+			-- Parse styles string into individual properties
+			if colors.styles then
+				for _, style in ipairs(colors.styles) do
+					style = vim.trim(style)
+					colors[style] = true
+				end
+				colors.styles = nil
+			end
 			hl(0, group, colors)
 		end
 	end

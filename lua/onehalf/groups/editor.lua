@@ -1,8 +1,6 @@
 local M = {}
 
-function M.get()
-	local C = require("onehalf.util").get_colors()
-
+function M.get(C, O)
 	return {
 
 		ColorColumn = { bg = C.color_col },
@@ -24,7 +22,7 @@ function M.get()
 		-- Substitute
 		LineNr = { fg = C.gutter_fg, bg = C.gutter_bg },
 		-- CursorLineNR
-		MatchParen = { fg = C.fg, underline = true, },
+		MatchParen = { fg = C.fg, styles = { "underline" } },
 		ModeMsg = { fg = C.fg, },
 		-- MsgSeparator
 		MoreMsg = { fg = C.fg, },

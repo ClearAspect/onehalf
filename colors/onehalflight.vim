@@ -1,4 +1,4 @@
 lua << EOF
 local onehalflight = require("onehalf")
-onehalflight.setup("light")
+onehalflight.load("light")
 EOF
