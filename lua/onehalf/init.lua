@@ -1,11 +1,25 @@
 local theme = require('onehalf.theme')
 local M = {
 	default_options = {
-		styles = {
-			comments = { "italic" }
-		}
 		-- transparent = false,
-		-- terminal_colors = true,
+		terminal_colors = true,
+		styles = {
+			comments = { "italic" },
+			conditionals = {},
+			loops = {},
+			functions = {},
+			keywords = {},
+			strings = {},
+			variables = {},
+			numbers = {},
+			booleans = {},
+			properties = {},
+			types = {},
+			operators = {},
+		},
+		integrations = {
+
+		},
 		-- styles = {
 		-- 	comments = "italic",
 		-- 	keywords = "bold",
@@ -54,7 +68,9 @@ M.load = function(style)
 	theme.set_highlights(M.options)
 end
 
+-- Setup the theme
 M.setup = function(user_options)
+	-- Merge the users options with the default options
 	M.options = vim.tbl_extend('force', M.default_options, user_options or {})
 end
 

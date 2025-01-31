@@ -37,10 +37,12 @@ theme.set_highlights = function(options)
 		end
 	end
 
-	-- Load terminal colors specially
-	local terminal = require("onehalf.groups.terminal").get(palette, options)
-	for key, color in pairs(terminal) do
-		vim.g[key] = color
+	-- Load terminal colors specially if enabled
+	if options.terminal_colors then
+		local terminal = require("onehalf.groups.terminal").get(palette, options)
+		for key, color in pairs(terminal) do
+			vim.g[key] = color
+		end
 	end
 
 	-- Load integration modules
