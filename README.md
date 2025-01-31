@@ -2,6 +2,7 @@
 
 The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme, but written in lua with added support for plugins and tweaks to improve highlights
 
+Includes both OneHalfDark & OneHalfLight colorschemes
 <img width="1624" alt="onehalfrepoheader" src="https://github.com/user-attachments/assets/31be93b5-4d39-4e39-b964-17b67bb988f8" />
 
 > **:warning: Warning**: This has only been tested with my own custom configuration. If you encounter any problems or have any requests, PLEASE open an issue.
@@ -32,7 +33,7 @@ For vim-plug:
 Plug 'clearaspect/onehalf'
 ```
 
-After installation, set the colorscheme with: `colorscheme onehalf`
+After installation, set the colorscheme with: `colorscheme onehalfdark` or `colorscheme onehalflight`
 
 # Integrations
 
