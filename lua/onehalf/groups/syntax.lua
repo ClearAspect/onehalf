@@ -1,45 +1,46 @@
 local M = {}
 
 function M.get(C, O)
+	local U = require("onehalf.util")
 	return {
 
-		Comment = { fg = C.comment_fg, styles = O.styles.comments }, -- Comments
-		SpecialComment = { fg = C.fg, },                       -- Special things inside comments
-		Constant = { fg = C.cyan, },                           -- (preferred) any constant
-		String = { fg = C.green, },                            -- a string constant: "this is a string"
-		Character = { fg = C.green, },                         -- a character constant: 'c', '\n'
-		Number = { fg = C.yellow, },                           -- a number constant: 234, 0xff
-		Float = { fg = C.yellow, },                            -- a floating point constant: 2.3e10
-		Boolean = { fg = C.cyan, },                            -- a boolean constant: TRUE, false
-		Identifier = { fg = C.red, },                          -- (preferred) any variable name
-		Function = { fg = C.blue, },                           -- function name (also: methods for classes)
-		Statement = { fg = C.purple, },                        -- (preferred) any statement
-		Conditional = { fg = C.purple, },                      -- if, then, else, endif, switch, etc.
-		Repeat = { fg = C.purple, },                           -- for, do, while, etc.
-		Label = { fg = C.purple, },                            -- case, default, etc.
-		Operator = { fg = C.fg, },                             -- "sizeof", "+", "*", etc.
-		Keyword = { fg = C.red, },                             -- any other keyword
-		Exception = { fg = C.red, },                           -- try, catch, throw
+		Comment = { fg = C.comment_fg, styles = O.styles.comments },     -- Comments
+		SpecialComment = { fg = C.fg, },                                 -- Special things inside comments
+		Constant = { fg = C.cyan, },                                     -- (preferred) any constant
+		String = { fg = C.green, styles = O.styles.strings or {} },      -- a string constant: "this is a string"
+		Character = { fg = C.green, },                                   -- a character constant: 'c', '\n'
+		Number = { fg = C.yellow, styles = O.styles.numbers or {} },     -- a number constant: 234, 0xff
+		Float = { link = "Number" },                                     -- a floating point constant: 2.3e10
+		Boolean = { fg = C.cyan, styles = O.styles.booleans or {} },     -- a boolean constant: TRUE, false
+		Identifier = { fg = C.red, styles = O.styles.variables or {} },  -- (preferred) any variable name
+		Function = { fg = C.blue, styles = O.styles.functions or {} },   -- function name (also: methods for classes)
+		Statement = { fg = C.purple, },                                  -- (preferred) any statement
+		Conditional = { fg = C.purple, styles = O.styles.conditionals or {} }, -- if, then, else, endif, switch, etc.
+		Repeat = { fg = C.purple, styles = O.styles.loops or {} },       -- for, do, while, etc.
+		Label = { fg = C.purple, },                                      -- case, default, etc.
+		Operator = { fg = C.fg, styles = O.styles.operators or {} },     -- "sizeof", "+", "*", etc.
+		Keyword = { fg = C.red, styles = O.styles.keywords or {} },      -- any other keyword
+		Exception = { fg = C.red, styles = O.styles.keywords or {} },    -- try, catch, throw
 
-		PreProc = { fg = C.yellow, },                          -- (preferred) generic Preprocessor
-		Include = { fg = C.purple, },                          -- preprocessor #include
-		Define = { fg = C.purple, },                           -- preprocessor #define
-		Macro = { fg = C.purple, },                            -- same as Define
-		PreCondit = { fg = C.yellow, },                        -- preprocessor #if, #else, #endif, etc.
+		PreProc = { fg = C.yellow, },                                    -- (preferred) generic Preprocessor
+		Include = { fg = C.purple, styles = O.styles.keywords or {} },   -- preprocessor #include
+		Define = { fg = C.purple, },                                     -- preprocessor #define
+		Macro = { fg = C.purple, },                                      -- same as Define
+		PreCondit = { fg = C.yellow, },                                  -- preprocessor #if, #else, #endif, etc.
 
-		StorageClass = { fg = C.yellow, },                     -- static, register, volatile, etc.
-		Structure = { fg = C.yellow, },                        -- struct, union, enum, etc.
-		Special = { fg = C.blue, },                            -- any special symbol
-		Type = { fg = C.yellow, },                             -- int, long, char, etc.
-		Typedef = { fg = C.yellow, },                          -- A typedef
-		SpecialChar = { fg = C.fg, },                          -- special character in a constant
-		Tag = { fg = C.fg, },                                  -- you can use CTRL-] on this
-		Delimiter = { fg = C.fg, },                            -- character that needs attention
-		Debug = { fg = C.fg, },                                -- debugging statements
+		StorageClass = { fg = C.yellow, },                               -- static, register, volatile, etc.
+		Structure = { fg = C.yellow, },                                  -- struct, union, enum, etc.
+		Special = { fg = C.blue, },                                      -- any special symbol
+		Type = { fg = C.yellow, styles = O.styles.types or {} },         -- int, long, char, etc.
+		Typedef = { fg = C.yellow, },                                    -- A typedef
+		SpecialChar = { fg = C.fg, },                                    -- special character in a constant
+		Tag = { fg = C.fg, },                                            -- you can use CTRL-] on this
+		Delimiter = { fg = C.fg, },                                      -- character that needs attention
+		Debug = { fg = C.fg, },                                          -- debugging statements
 
-		Underlined = { styles = { "underline" } },             -- (preferred) text that stands out, HTML links
-		Bold = { styles = { "bold" } },                        -- (preferred) any bold text
-		Italic = { styles = { "italic" } },                    -- (preferred) any italic text
+		Underlined = { styles = { "underline" } },                       -- (preferred) text that stands out, HTML links
+		Bold = { styles = { "bold" } },                                  -- (preferred) any bold text
+		Italic = { styles = { "italic" } },                              -- (preferred) any italic text
 		-- Ignore = { fg = c.fg,  }, 			
 
 		Error = { fg = C.red, bg = C.gutter_bg }, -- (preferred) any erroneous construct
@@ -71,15 +72,14 @@ function M.get(C, O)
 		diffFile = { fg = C.blue },
 		diffLine = { fg = C.comment_fg },
 		diffIndexLine = { fg = C.comment_fg },
-		DiffAdd = { bg = require("onehalf.util").blend_colors(C.green, C.bg, 0.25) }, -- diff mode: Added line
-		DiffChange = { bg = require("onehalf.util").blend_colors(C.yellow, C.bg, 0.25) }, -- diff mode: Changed line
-		DiffDelete = { bg = require("onehalf.util").blend_colors(C.red, C.bg, 0.25) }, -- diff mode: Deleted line
-		DiffText = { bg = require("onehalf.util").blend_colors(C.blue, C.bg, 0.25) }, -- diff mode: Changed text within a changed line
+		DiffAdd = { bg = U.blend_colors(C.green, C.bg, 0.25) }, -- diff mode: Added line
+		DiffChange = { bg = U.blend_colors(C.yellow, C.bg, 0.25) }, -- diff mode: Changed line
+		DiffDelete = { bg = U.blend_colors(C.red, C.bg, 0.25) }, -- diff mode: Deleted line
+		DiffText = { bg = U.blend_colors(C.blue, C.bg, 0.25) }, -- diff mode: Changed text within a changed line
 
 		-- healthError
 		-- healthSuccess
 		-- healthWarning
-
 
 		-- glyphs
 		-- GlyphPalette1 = { fg = c.red },

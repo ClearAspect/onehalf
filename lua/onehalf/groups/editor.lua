@@ -13,7 +13,7 @@ function M.get(C, O)
 		CursorLineNr = { fg = C.fg, },
 		Directory = { fg = C.blue, },
 		-- EndOfBuffer
-		ErrorMsg = { fg = C.fg, },
+		ErrorMsg = { fg = C.fg, styles = { "bold", "italic" } },
 		VertSplit = { fg = C.vertsplit, bg = C.vertsplit },
 		Folded = { fg = C.fg, },
 		FoldColumn = { fg = C.fg, },
