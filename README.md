@@ -6,14 +6,14 @@ Includes both OneHalfDark & OneHalfLight colorschemes
 <img width="1609" alt="OneHalfDarkHeader" src="https://github.com/user-attachments/assets/87b49bd3-2576-4df4-b9e5-08eec7d77d4c" />
 <img width="1609" alt="OneHalfLightHeader" src="https://github.com/user-attachments/assets/5d1f6539-cef7-4929-91de-d9d3639273c8" />
 
-> **:warning: Warning**: This has only been tested with my own custom configuration. If you encounter any problems or have any requests, PLEASE open an issue.
+> [!WARNING]
+>This has only been tested with my own custom configuration. If you encounter any problems or have any requests, PLEASE open an issue.
 
-# Installation
+## 📦 Installation
 
 You can install this plugin using your preferred plugin manager. For example:
 
-For those using lazy:
-
+Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 {
     'clearaspect/onehalf',
@@ -22,25 +22,17 @@ For those using lazy:
 }
 ```
 
-For those using packer:
-
+Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
 ```lua
 use { 'clearaspect/onehalf' }
 ```
 
-For vim-plug:
-
-```vim
-Plug 'clearaspect/onehalf'
-```
-
 After installation, set the colorscheme with: `:colorscheme onehalfdark` or `:colorscheme onehalflight`
 
-# Integrations
+## ✨ Features
 
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-- [Git Gutter](https://github.com/airblade/vim-gitgutter)
 - [fzf-lua](https://github.com/ibhagwan/fzf-lua)
 - [WhichKey](https://github.com/liuchengxu/vim-which-key)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
@@ -49,7 +41,7 @@ After installation, set the colorscheme with: `:colorscheme onehalfdark` or `:co
 - [Neogit](https://github.com/TimUntersberger/neogit)
 - [Blink Completion](https://github.com/Saghen/blink.cmp)
 
-# Changes from the original
+## Changes from the original
 
 - Reduced the contrast of delimiter colors for improved visual comfort
 - Built modular infrastructure for easy plugin integration
@@ -58,13 +50,7 @@ After installation, set the colorscheme with: `:colorscheme onehalfdark` or `:co
 - Extended support for modern Neovim plugins
 - Maintained the original OneHalf palette while improving readability
 
-# Todo
-
-- Adjust Neogit and Diffview highlighting.
-- Fix Bufferline background
-- Setup Function
-
-# Credits
+## Credits
 
 - [sonph](https://github.com/sonph/onehalf) - Creator of the original OneHalf color palette
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) - Project structure inspiration
