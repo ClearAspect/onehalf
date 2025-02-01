@@ -1,8 +1,11 @@
 local hl = vim.api.nvim_set_hl
-local palette = require("onehalf.util").get_colors()
 local theme = {}
 
 theme.set_highlights = function(options)
+	-- Get the Palette once
+	local palette = require("onehalf.util").get_colors()
+
+
 	-- Core editor highlights
 	local core_modules = {
 		"editor",
