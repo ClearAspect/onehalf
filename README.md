@@ -3,7 +3,8 @@
 The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme, but written in lua with added support for plugins and tweaks to improve highlights
 
 Includes both OneHalfDark & OneHalfLight colorschemes
-<img width="1624" alt="onehalfrepoheader" src="https://github.com/user-attachments/assets/31be93b5-4d39-4e39-b964-17b67bb988f8" />
+<img width="1609" alt="OneHalfDarkHeader" src="https://github.com/user-attachments/assets/87b49bd3-2576-4df4-b9e5-08eec7d77d4c" />
+<img width="1609" alt="OneHalfLightHeader" src="https://github.com/user-attachments/assets/5d1f6539-cef7-4929-91de-d9d3639273c8" />
 
 > **:warning: Warning**: This has only been tested with my own custom configuration. If you encounter any problems or have any requests, PLEASE open an issue.
 
