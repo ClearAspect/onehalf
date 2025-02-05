@@ -1,4 +1,4 @@
-# OneHalf
+# One Half ½
 
 The same fantasic color palette from [sonph](https://github.com/sonph/onehalf)'s OneHalf colorscheme, but written in lua with added support for plugins and tweaks to improve highlights
 
@@ -27,7 +27,50 @@ Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
 use { 'clearaspect/onehalf' }
 ```
 
-After installation, set the colorscheme with: `:colorscheme onehalfdark` or `:colorscheme onehalflight`
+## 🚀 Usage
+
+```lua
+vim.cmd[[colorscheme onehalfdark]]
+-- or
+vim.cmd[[colorscheme onehalflight]]
+```
+
+```vim
+colorscheme onehalfdark
+" or
+colorscheme onehalflight
+```
+
+## ⚙️ Configuration
+
+
+<details>
+  <summary>Default Options</summary>
+
+```lua
+require('onehalf').setup({
+    terminal_colors = true, -- Apply the theme to neovim terminal windows
+    -- Style to be applied to different syntax groups
+    -- Value is any valid attr-list value for `:help nvim_set_hl`
+    styles = {
+        comments = { italic = true },
+        conditionals = {},
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+})
+```
+
+</details>
+
 
 ## ✨ Features
 
@@ -51,6 +94,7 @@ After installation, set the colorscheme with: `:colorscheme onehalfdark` or `:co
 - Maintained the original OneHalf palette while improving readability
 
 ## Credits
+
 
 - [sonph](https://github.com/sonph/onehalf) - Creator of the original OneHalf color palette
 - [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim) - Project structure inspiration

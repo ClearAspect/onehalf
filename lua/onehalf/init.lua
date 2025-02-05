@@ -1,10 +1,12 @@
 local theme = require('onehalf.theme')
 local M = {
 	default_options = {
-		-- transparent = false,
-		terminal_colors = true,
+		transparency = false,
+		terminal_colors = true, -- Apply the theme to neovim terminal windows
+		-- Style to be applied to different syntax groups
+		-- Value is any valid attr-list value for `:help nvim_set_hl`
 		styles = {
-			comments = { "italic" },
+			comments = { italic = true },
 			conditionals = {},
 			loops = {},
 			functions = {},
@@ -17,26 +19,7 @@ local M = {
 			types = {},
 			operators = {},
 		},
-		integrations = {
-
-		},
-		-- styles = {
-		-- 	comments = "italic",
-		-- 	keywords = "bold",
-		-- 	functions = "NONE",
-		-- 	variables = "NONE",
-		-- },
-		-- integrations = {
-		-- 	treesitter = true,
-		-- 	native_lsp = true,
-		-- 	cmp = true,
-		-- 	gitsigns = true,
-		-- 	telescope = true,
-		-- 	whichkey = true,
-		-- 	diffview = true,
-		-- 	fzf = true,
-		-- },
-	},
+	}
 }
 
 M.options = M.default_options

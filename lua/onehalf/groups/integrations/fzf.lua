@@ -16,7 +16,7 @@ function M.get(C, O)
 		FzfLuaBufNr = { fg = C.yellow },
 		FzfLuaBufFlagCur = { fg = C.purple },
 		FzfLuaBufFlagAlt = { fg = C.blue },
-		FzfLuaTabTitle = { fg = C.sky },
+		FzfLuaTabTitle = { fg = C.blue },
 		FzfLuaTabMarker = { fg = C.yellow },
 		FzfLuaLiveSym = { fg = C.purple },
 	}

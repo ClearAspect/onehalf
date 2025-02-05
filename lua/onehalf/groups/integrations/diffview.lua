@@ -13,12 +13,12 @@ function M.get(C, O)
 		DiffviewSecondary = { link = "String" },
 
 		-- File panel
-		DiffviewFilePanelTitle = { fg = C.blue, styles = { "bold" } },
+		DiffviewFilePanelTitle = { fg = C.blue, bold = true },
 		DiffviewFilePanelCounter = { link = "Normal" },
 		DiffviewFilePanelFileName = { link = "Normal" },
 		DiffviewFilePanelPath = { link = "Comment" },
 		DiffviewFilePanelSelected = { link = "CursorLine" },
-		DiffviewFilePanelRootPath = { fg = C.purple, styles = { "bold" } },
+		DiffviewFilePanelRootPath = { fg = C.purple, bold = true },
 
 		-- File panel stats
 		DiffviewFilePanelInsertions = { link = "diffAdded" },
@@ -26,12 +26,12 @@ function M.get(C, O)
 		DiffviewFilePanelConflicts = { link = "diffChanged" },
 
 		-- Folders
-		DiffviewFolderName = { fg = C.blue, styles = { "bold" } },
+		DiffviewFolderName = { fg = C.blue, bold = true },
 		DiffviewFolderSign = { link = "DiffviewFolderName" },
 
 		-- Git elements
 		DiffviewHash = { link = "@constant" },
-		DiffviewReference = { fg = C.blue, styles = { "bold" } },
+		DiffviewReference = { fg = C.blue, bold = true },
 		DiffviewReflogSelector = { link = "@keyword" },
 
 		-- Status indicators

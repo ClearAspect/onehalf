@@ -13,7 +13,7 @@ function M.get(C, O)
 		CursorLineNr = { fg = C.fg, },
 		Directory = { fg = C.blue, },
 		-- EndOfBuffer
-		ErrorMsg = { fg = C.fg, styles = { "bold", "italic" } },
+		ErrorMsg = { fg = C.fg, bold = true,italic = true },
 		VertSplit = { fg = C.vertsplit, bg = C.vertsplit },
 		Folded = { fg = C.fg, },
 		FoldColumn = { fg = C.fg, },
@@ -22,18 +22,18 @@ function M.get(C, O)
 		-- Substitute
 		LineNr = { fg = C.gutter_fg, bg = C.gutter_bg },
 		-- CursorLineNR
-		MatchParen = { fg = C.fg, styles = { "underline" } },
+		MatchParen = { fg = C.fg, underline = true },
 		ModeMsg = { fg = C.fg, },
 		-- MsgSeparator
 		MoreMsg = { fg = C.fg, },
 		NonText = { fg = C.non_text, },
-		Normal = { fg = C.fg, bg = C.bg },
+		Normal = { fg = C.fg, bg = O.transparency and "NONE" or C.bg },
 		-- NormalNC
 		-- NoramlSB
 		NormalFloat = { fg = C.comment_fg, bg = C.bg },
-		-- FloatBorder
-		-- FloatTitle
-		Pmenu = { fg = C.comment_fg, bg = C.bg },
+		FloatBorder = { fg = C.blue },
+		FloatTitle = { fg = C.fg },
+		Pmenu = { fg = C.blue, bg = C.bg },
 		PmenuSel = { bg = C.selection },
 		PmenuSbar = { fg = C.selection, },
 		PmenuThumb = { fg = C.selection, },
