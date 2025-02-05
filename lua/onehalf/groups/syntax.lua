@@ -4,7 +4,7 @@ function M.get(C, O)
 	local U = require("onehalf.util")
 	return {
 
-		Comment = { fg = C.comment_fg, styles = O.styles.comments },     -- Comments
+		Comment = { fg = C.comment_fg, styles = O.styles.comments or {} }, -- Comments
 		SpecialComment = { fg = C.fg, },                                 -- Special things inside comments
 		Constant = { fg = C.cyan, },                                     -- (preferred) any constant
 		String = { fg = C.green, styles = O.styles.strings or {} },      -- a string constant: "this is a string"
@@ -38,9 +38,9 @@ function M.get(C, O)
 		Delimiter = { fg = C.fg, },                                      -- character that needs attention
 		Debug = { fg = C.fg, },                                          -- debugging statements
 
-		Underlined = { styles = { "underline" } },                       -- (preferred) text that stands out, HTML links
-		Bold = { styles = { "bold" } },                                  -- (preferred) any bold text
-		Italic = { styles = { "italic" } },                              -- (preferred) any italic text
+		Underlined = { underline = true },                               -- (preferred) text that stands out, HTML links
+		Bold = { bold = true },                                          -- (preferred) any bold text
+		Italic = { italic = true },                                      -- (preferred) any italic text
 		-- Ignore = { fg = c.fg,  }, 			
 
 		Error = { fg = C.red, bg = C.gutter_bg }, -- (preferred) any erroneous construct
@@ -80,6 +80,7 @@ function M.get(C, O)
 		-- healthError
 		-- healthSuccess
 		-- healthWarning
+
 
 		-- glyphs
 		-- GlyphPalette1 = { fg = c.red },

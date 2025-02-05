@@ -5,7 +5,6 @@ theme.set_highlights = function(options)
 	-- Get the Palette once
 	local palette = require("onehalf.util").get_colors()
 
-
 	-- Core editor highlights
 	local core_modules = {
 		"editor",
@@ -28,12 +27,12 @@ theme.set_highlights = function(options)
 	for _, module in ipairs(core_modules) do
 		local highlights = require("onehalf.groups." .. module).get(palette, options)
 		for group, colors in pairs(highlights) do
-			-- Parse styles string into individual properties
 			if colors.styles then
-				for _, style in ipairs(colors.styles) do
-					style = vim.trim(style)
-					colors[style] = true
+				-- Copy all style properties from the styles table
+				for k, v in pairs(colors.styles) do
+					colors[k] = v
 				end
+				-- Remove the styles table as it's not a valid highlight attribute
 				colors.styles = nil
 			end
 			hl(0, group, colors)
@@ -52,12 +51,12 @@ theme.set_highlights = function(options)
 	for _, module in ipairs(integration_modules) do
 		local highlights = require("onehalf.groups.integrations." .. module).get(palette, options)
 		for group, colors in pairs(highlights) do
-			-- Parse styles string into individual properties
 			if colors.styles then
-				for _, style in ipairs(colors.styles) do
-					style = vim.trim(style)
-					colors[style] = true
+				-- Copy all style properties from the styles table
+				for k, v in pairs(colors.styles) do
+					colors[k] = v
 				end
+				-- Remove the styles table as it's not a valid highlight attribute
 				colors.styles = nil
 			end
 			hl(0, group, colors)

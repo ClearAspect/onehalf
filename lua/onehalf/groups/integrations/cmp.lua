@@ -7,11 +7,11 @@ function M.get(C, O)
 		CmpGhostText = { fg = C.comment_fg, bg = 'NONE' },
 
 		CmpItemAbbr = { fg = C.fg },
-		CmpItemAbbrDeprecated = { fg = C.comment_fg, styles = { "strikethrough" } },
+		CmpItemAbbrDeprecated = { fg = C.comment_fg, strikethrough = true},
 		CmpItemKind = { fg = C.fg },
 		CmpItemMenu = { fg = C.fg },
-		CmpItemAbbrMatch = { fg = C.fg, styles = { "bold" } },
-		CmpItemAbbrMatchFuzzy = { fg = C.fg, styles = { "bold" } },
+		CmpItemAbbrMatch = { fg = C.fg, bold = true },
+		CmpItemAbbrMatchFuzzy = { fg = C.fg, bold = true },
 
 		-- kind support
 		CmpItemKindSnippet = { fg = C.purple },
