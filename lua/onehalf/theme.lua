@@ -14,6 +14,7 @@ theme.set_highlights = function(options)
 	-- Integration highlights
 	local integration_modules = {
 		"cmp",
+		"blink_cmp",
 		"diffview",
 		"fzf",
 		"gitsigns",

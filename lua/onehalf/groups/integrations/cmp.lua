@@ -2,16 +2,14 @@ local M = {}
 
 function M.get(C, O)
 	return {
-
-
 		CmpGhostText = { fg = C.comment_fg, bg = 'NONE' },
 
 		CmpItemAbbr = { fg = C.fg },
-		CmpItemAbbrDeprecated = { fg = C.comment_fg, strikethrough = true},
+		CmpItemAbbrDeprecated = { fg = C.comment_fg, strikethrough = true },
 		CmpItemKind = { fg = C.fg },
-		CmpItemMenu = { fg = C.fg },
-		CmpItemAbbrMatch = { fg = C.fg, bold = true },
-		CmpItemAbbrMatchFuzzy = { fg = C.fg, bold = true },
+		CmpItemMenu = { link = 'Pmenu' },
+		CmpItemAbbrMatch = { fg = C.fg },
+		CmpItemAbbrMatchFuzzy = { fg = C.fg },
 
 		-- kind support
 		CmpItemKindSnippet = { fg = C.purple },
