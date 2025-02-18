@@ -10,18 +10,18 @@ function M.get(C, O)
 		CursorIM = { fg = C.bg, bg = C.blue },
 		CursorColumn = { bg = C.cursor_line },
 		CursorLine = { bg = C.cursor_line },
-		CursorLineNr = { fg = C.fg, },
 		Directory = { fg = C.blue, },
 		-- EndOfBuffer
-		ErrorMsg = { fg = C.fg, bold = true,italic = true },
+		ErrorMsg = { fg = C.fg, bold = true, italic = true },
 		VertSplit = { fg = C.vertsplit, bg = C.vertsplit },
 		Folded = { fg = C.fg, },
 		FoldColumn = { fg = C.fg, },
 		SignColumn = { fg = C.fg, },
 		-- SignColumnSB= { fg = c.fg,  },
 		-- Substitute
-		LineNr = { fg = C.gutter_fg, bg = C.gutter_bg },
-		-- CursorLineNR
+		LineNr = { fg = C.comment_fg, bg = C.gutter_bg },
+		CursorLineNr = { fg = C.gutter_fg },
+
 		MatchParen = { fg = C.fg, underline = true },
 		ModeMsg = { fg = C.fg, },
 		-- MsgSeparator
@@ -33,7 +33,7 @@ function M.get(C, O)
 		NormalFloat = { fg = C.comment_fg, bg = C.bg },
 		FloatBorder = { fg = C.blue },
 		FloatTitle = { fg = C.fg },
-		Pmenu = { fg = C.blue, bg = C.bg },
+		Pmenu = { fg = C.fg, bg = C.cursor_line },
 		PmenuSel = { bg = C.selection },
 		PmenuSbar = { fg = C.selection, },
 		PmenuThumb = { fg = C.selection, },
@@ -47,7 +47,7 @@ function M.get(C, O)
 		SpellCap = { fg = C.yellow, },
 		SpellLocal = { fg = C.yellow, },
 		SpellRare = { fg = C.yellow, },
-		StatusLine = { fg = C.blue, bg = C.cursor_line },
+		StatusLine = { fg = C.fg, bg = C.bg },
 		StatusLineNC = { fg = C.comment_fg, bg = C.cursor_line },
 		TabLine = { fg = C.comment_fg, bg = C.cursor_line },
 		TabLineFill = { fg = C.comment_fg, bg = C.cursor_line },
@@ -60,6 +60,7 @@ function M.get(C, O)
 		WarningMsg = { fg = C.red, },
 		Whitespace = { fg = C.non_text, },
 		WildMenu = { fg = C.fg, },
+
 		-- WinBar
 		-- WinBarNc
 		-- WinSeparator
