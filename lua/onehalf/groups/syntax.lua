@@ -5,7 +5,7 @@ function M.get(C, O)
 	return {
 
 		Comment = { fg = C.comment_fg, styles = O.styles.comments or {} },   -- Comments
-		SpecialComment = { fg = C.fg, },                                     -- Special things inside comments
+		SpecialComment = { link = "Comment" },                               -- Special things inside comments
 		Constant = { fg = C.cyan, },                                         -- (preferred) any constant
 		String = { fg = C.green, styles = O.styles.strings or {} },          -- a string constant: "this is a string"
 		Character = { fg = C.green, },                                       -- a character constant: 'c', '\n'

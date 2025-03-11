@@ -20,6 +20,7 @@ theme.set_highlights = function(options)
 		"gitsigns",
 		"semantic_tokens",
 		"telescope",
+		"treesitter-context",
 		"treesitter",
 		"whichkey",
 	}
