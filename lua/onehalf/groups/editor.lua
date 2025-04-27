@@ -19,7 +19,7 @@ function M.get(C, O)
 		SignColumn = { fg = C.fg, },
 		-- SignColumnSB= { fg = c.fg,  },
 		-- Substitute
-		LineNr = { fg = C.comment_fg, bg = C.gutter_bg },
+		LineNr = { fg = C.comment_fg, bg = O.transparency and "NONE" or C.gutter_bg },
 		CursorLineNr = { fg = C.gutter_fg },
 
 		MatchParen = { fg = C.fg, underline = true },
@@ -50,7 +50,7 @@ function M.get(C, O)
 		StatusLine = { fg = C.fg, bg = C.bg },
 		StatusLineNC = { fg = C.comment_fg, bg = C.cursor_line },
 		TabLine = { fg = C.comment_fg, bg = C.cursor_line },
-		TabLineFill = { fg = C.comment_fg, bg = C.cursor_line },
+		TabLineFill = { fg = C.comment_fg, bg = O.transparency and "NONE" or C.cursor_line },
 		TabLineSel = { fg = C.fg, bg = C.bg },
 		-- TermCursor
 		-- TermCursorNC
