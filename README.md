@@ -49,6 +49,7 @@ colorscheme onehalflight
 
 ```lua
 require('onehalf').setup({
+    transparency = false, -- Enable this to disable background color
     terminal_colors = true, -- Apply the theme to neovim terminal windows
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value for `:help nvim_set_hl`
@@ -66,11 +67,50 @@ require('onehalf').setup({
         types = {},
         operators = {},
     },
+    -- Configure which integrations should be applied
+    -- True enables the integration, false disables it
+    integrations = {
+		integrations = {
+			cmp = true,
+			blink_cmp = true,
+			diffview = true,
+			fzf = true,
+			gitsigns = true,
+			semantic_tokens = true,
+			telescope = true,
+			treesitter_context = true,
+			treesitter = true,
+			whichkey = true,
+		}
+    },
 })
 ```
 
 </details>
 
+### Customizing Integrations
+
+You can selectively enable or disable specific plugin integrations by configuring the `integrations` table:
+
+
+
+```lua
+require('onehalf').setup({
+    integrations = {
+        -- Enable only specific integrations
+        diffview = true,
+        telescope = true,
+        treesitter = true,
+
+        -- Disable specific integrations
+        fzf = false,
+        whichkey = false,
+    },
+})
+
+```
+
+Only the integrations you want to modify need to be specified. Any integrations not mentioned will use their default values.
 
 ## ✨ Features
 

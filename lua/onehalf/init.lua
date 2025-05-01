@@ -19,6 +19,18 @@ local M = {
 			types = {},
 			operators = {},
 		},
+		integrations = {
+			cmp = true,
+			blink_cmp = true,
+			diffview = true,
+			fzf = true,
+			gitsigns = true,
+			semantic_tokens = true,
+			telescope = true,
+			treesitter_context = true,
+			treesitter = true,
+			whichkey = true,
+		}
 	}
 }
 
