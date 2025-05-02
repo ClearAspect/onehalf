@@ -70,19 +70,17 @@ require('onehalf').setup({
     -- Configure which integrations should be applied
     -- True enables the integration, false disables it
     integrations = {
-		integrations = {
-			cmp = true,
-			blink_cmp = true,
-			diffview = true,
-			fzf = true,
-			gitsigns = true,
-			semantic_tokens = true,
-			telescope = true,
-			treesitter_context = true,
-			treesitter = true,
-			whichkey = true,
-		}
-    },
+        cmp = true,
+        blink_cmp = true,
+        diffview = true,
+        fzf = true,
+        gitsigns = true,
+        semantic_tokens = true,
+        telescope = true,
+        treesitter_context = true,
+        treesitter = true,
+        whichkey = true,
+    }
 })
 ```
 
