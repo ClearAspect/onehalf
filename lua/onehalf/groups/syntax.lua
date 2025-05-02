@@ -67,20 +67,21 @@ function M.get(C, O)
 		diffAdded = { fg = C.green },
 		diffRemoved = { fg = C.red },
 		diffChanged = { fg = C.yellow },
+
 		diffOldFile = { fg = C.blue },
 		diffNewFile = { fg = C.blue },
 		diffFile = { fg = C.blue },
 		diffLine = { fg = C.comment_fg },
 		diffIndexLine = { fg = C.comment_fg },
-		DiffAdd = { bg = U.blend_colors(C.green, C.bg, 0.25) },   -- diff mode: Added line
-		DiffChange = { bg = U.blend_colors(C.yellow, C.bg, 0.25) }, -- diff mode: Changed line
-		DiffDelete = { bg = U.blend_colors(C.red, C.bg, 0.25) },  -- diff mode: Deleted line
-		DiffText = { bg = U.blend_colors(C.blue, C.bg, 0.25) },   -- diff mode: Changed text within a changed line
+
+		DiffAdd = { fg = "NONE", bg = U.blend_colors(C.green, C.bg, 0.25) }, -- diff mode: Added line
+		DiffDelete = { fg = "NONE", bg = U.blend_colors(C.red, C.bg, 0.25) }, -- diff mode: Deleted line
+		DiffChange = { fg = "NONE", bg = U.blend_colors(C.blue, C.bg, 0.25) }, -- diff mode: Changed line
+		DiffText = { fg = "NONE", bg = U.blend_colors(C.yellow, C.bg, 0.25) }, -- diff mode: Changed text within a changed line
 
 		-- healthError
 		-- healthSuccess
 		-- healthWarning
-
 
 		-- glyphs
 		-- GlyphPalette1 = { fg = c.red },

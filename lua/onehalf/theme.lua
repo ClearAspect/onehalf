@@ -47,9 +47,7 @@ theme.set_highlights = function(options)
 		if enabled then
 			-- Using pcall to handle potential errors if a module doesn't exist
 			local ok, highlights = pcall(require, "onehalf.groups.integrations." .. integration)
-			if ok and highlights then
-				apply_highlights(highlights.get(palette, options))
-			end
+			if ok and highlights then apply_highlights(highlights.get(palette, options)) end
 		end
 	end
 end

@@ -1,12 +1,20 @@
 local M = {}
 
 function M.get(C, O)
+	local U = require("onehalf.util")
 	return {
-
 		-- Basic UI
 		DiffviewNormal = { link = "Normal" },
 		DiffviewDim1 = { link = "Comment" },
 		DiffviewWinSeparator = { link = "WinSeparator" },
+		DiffviewStatusLine = {},
+		DiffviewStatusLineNC = {},
+		DiffviewSignColumn = {},
+		DiffviewCursorLine = {},
+		DiffviewEndOfBuffer = {},
+		DiffviewNonText = { link = "NonText" },
+		DiffviewDiffAddAsDelete = {},
+		DiffviewDiffDeleteDim = {},
 
 		-- Primary colors
 		DiffviewPrimary = { link = "Function" },
@@ -17,7 +25,7 @@ function M.get(C, O)
 		DiffviewFilePanelCounter = { link = "Normal" },
 		DiffviewFilePanelFileName = { link = "Normal" },
 		DiffviewFilePanelPath = { link = "Comment" },
-		DiffviewFilePanelSelected = { link = "CursorLine" },
+		DiffviewFilePanelSelected = { bg = C.cursor_line },
 		DiffviewFilePanelRootPath = { fg = C.purple, bold = true },
 
 		-- File panel stats
@@ -28,6 +36,13 @@ function M.get(C, O)
 		-- Folders
 		DiffviewFolderName = { fg = C.blue, bold = true },
 		DiffviewFolderSign = { link = "DiffviewFolderName" },
+
+		-- Diff
+
+		DiffviewDiffAdd = {},
+		DiffviewDiffDelete = {},
+		DiffviewDiffChange = {},
+		DiffviewDiffText = {},
 
 		-- Git elements
 		DiffviewHash = { link = "@constant" },
