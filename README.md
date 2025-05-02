@@ -124,7 +124,6 @@ Only the integrations you want to modify need to be specified. Any integrations 
 
 ## Changes from the original
 
-- Reduced the contrast of delimiter colors for improved visual comfort
 - Built modular infrastructure for easy plugin integration
 - Refined UI element highlighting for better consistency
 - Added smart color blending for diff views and git changes
