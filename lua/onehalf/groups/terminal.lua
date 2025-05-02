@@ -29,7 +29,6 @@ function M.get(C, O)
 
 		terminal_color_background = C.bg,
 		terminal_color_foreground = C.fg,
-
 	}
 end
 

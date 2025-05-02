@@ -3,11 +3,11 @@
 local M = {}
 
 function M.get_colors()
-	local background = vim.o.background or 'dark'
-	if background == 'light' then
-		return require('onehalf.colors.onehalflight')
+	local background = vim.o.background or "dark"
+	if background == "light" then
+		return require("onehalf.colors.onehalflight")
 	else
-		return require('onehalf.colors.onehalfdark')
+		return require("onehalf.colors.onehalfdark")
 	end
 end
 
@@ -18,9 +18,7 @@ local function hex_to_rgb(hex)
 end
 
 -- Converts RGB components to hex color string
-local function rgb_to_hex(r, g, b)
-	return string.format("#%02x%02x%02x", r, g, b)
-end
+local function rgb_to_hex(r, g, b) return string.format("#%02x%02x%02x", r, g, b) end
 
 -- Blend two colors with alpha transparency
 function M.blend_colors(color1, color2, alpha)

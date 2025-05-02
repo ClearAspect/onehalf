@@ -1,4 +1,4 @@
-local C = require('onehalf.colors.onehalflight')
+local C = require("onehalf.colors.onehalflight")
 
 local onehalflight = {}
 

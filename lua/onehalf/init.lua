@@ -1,4 +1,4 @@
-local theme = require('onehalf.theme')
+local theme = require("onehalf.theme")
 local M = {
 	default_options = {
 		transparency = false,
@@ -30,35 +30,31 @@ local M = {
 			treesitter_context = true,
 			treesitter = true,
 			whichkey = true,
-		}
-	}
+		},
+	},
 }
 
 M.options = M.default_options
 
 M.load = function(style)
 	-- default to dark if none is specified
-	style = style or 'dark'
+	style = style or "dark"
 
 	-- Validate parameter
-	if style ~= 'dark' and style ~= 'light' then
-		style = 'dark'
-	end
+	if style ~= "dark" and style ~= "light" then style = "dark" end
 
 	-- Reset background and colorscheme
-	if vim.fn.exists('syntax_on') then
-		vim.cmd('syntax reset')
-	end
+	if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
 
 	-- Set the background and termguicolors
 	vim.o.termguicolors = true
 	vim.o.background = style
 
 	-- Clear all highlights before setting new ones
-	vim.cmd('highlight clear')
+	vim.cmd("highlight clear")
 
 	-- Set the colorscheme name properly
-	vim.g.colors_name = 'onehalf' .. style
+	vim.g.colors_name = "onehalf" .. style
 
 	theme.set_highlights(M.options)
 end
@@ -66,8 +62,7 @@ end
 -- Setup the theme
 M.setup = function(user_options)
 	-- Merge the users options with the default options
-	M.options = vim.tbl_extend('force', M.default_options, user_options or {})
+	M.options = vim.tbl_extend("force", M.default_options, user_options or {})
 end
-
 
 return M

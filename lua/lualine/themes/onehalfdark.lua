@@ -1,4 +1,4 @@
-local C = require('onehalf.colors.onehalfdark')
+local C = require("onehalf.colors.onehalfdark")
 
 local onehalfdark = {}
 
@@ -37,7 +37,6 @@ onehalfdark.terminal = {
 	b = { bg = C.non_text, fg = C.red },
 	c = { bg = C.non_text, fg = C.fg },
 }
-
 
 onehalfdark.inactive = {
 	a = { bg = C.bg, fg = C.blue },

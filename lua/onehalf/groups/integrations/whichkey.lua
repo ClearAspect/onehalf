@@ -14,7 +14,6 @@ function M.get(C, O)
 		WhichKeyIcon = { fg = C.fg },
 		WhichKeyNormal = { fg = C.red },
 		WhichKeyTitle = { fg = C.blue },
-
 	}
 end
 

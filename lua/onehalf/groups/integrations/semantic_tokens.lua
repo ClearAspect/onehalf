@@ -9,17 +9,16 @@ groups are derived from the token's type and modifiers:
 :h lsp-semantic-highlight
 --]]
 
-
 local M = {}
 
 function M.get(C, O)
 	return {
 		-- Identifiers
-		["@lsp.type.variable"] = {},            -- Identifiers that declare or reference a local or global variable
-		["@lsp.type.parameter"] = {},           -- Identifiers that declare or reference a function or method parameters
-		["@lsp.type.property"] = {},            -- Identifiers that declare or reference a member property, member field, or member variable
-		["@lsp.type.enumMember"] = {},          -- Identifiers that declare or reference an enumeration property, constant, or member
-		["@lsp.type.event"] = {},               -- Identifiers that declare an event property
+		["@lsp.type.variable"] = {}, -- Identifiers that declare or reference a local or global variable
+		["@lsp.type.parameter"] = {}, -- Identifiers that declare or reference a function or method parameters
+		["@lsp.type.property"] = {}, -- Identifiers that declare or reference a member property, member field, or member variable
+		["@lsp.type.enumMember"] = {}, -- Identifiers that declare or reference an enumeration property, constant, or member
+		["@lsp.type.event"] = {}, -- Identifiers that declare an event property
 		["@lsp.type.namespace"] = { fg = C.red }, -- Identifiers that declare or reference a namespace, module, or package
 
 		-- Literals
@@ -29,18 +28,18 @@ function M.get(C, O)
 		["@lsp.type.number"] = {}, -- Tokens that represent a number literal
 
 		-- Types
-		["@lsp.type.class"] = {},       -- Identifiers that declare or represent a class type
-		["@lsp.type.enum"] = {},        -- Identifiers that declare or represent and
-		["@lsp.type.interface"] = {},   -- Identifiers that declare or reference an interface type
-		["@lsp.type.struct"] = {},      -- Identifiers that declare or reference a struct type
-		["@lsp.type.type"] = {},        -- Identifiers that declare or reference a type that is not covered above
+		["@lsp.type.class"] = {}, -- Identifiers that declare or represent a class type
+		["@lsp.type.enum"] = {}, -- Identifiers that declare or represent and
+		["@lsp.type.interface"] = {}, -- Identifiers that declare or reference an interface type
+		["@lsp.type.struct"] = {}, -- Identifiers that declare or reference a struct type
+		["@lsp.type.type"] = {}, -- Identifiers that declare or reference a type that is not covered above
 		["@lsp.type.typeParameter"] = {}, -- Identifiers that declare or reference a type parameter
-		["@lsp.type.decorator"] = {},   -- Identifiers that declare or reference decorator and annotations
+		["@lsp.type.decorator"] = {}, -- Identifiers that declare or reference decorator and annotations
 
 		-- Functions
 		["@lsp.type.function"] = {}, -- Identifiers that declare a function
 		["@lsp.type.method"] = {}, -- Identifiers that declare a member function or method
-		["@lsp.type.macro"] = {},  -- Identifiers that declare a macro
+		["@lsp.type.macro"] = {}, -- Identifiers that declare a macro
 		["@lsp.type.operator"] = {}, -- Tokens that represent an operator
 
 		-- Keywords
@@ -50,8 +49,6 @@ function M.get(C, O)
 		-- Comments
 		["@lsp.type.comment"] = {}, -- Tokens that represent a comment
 
-
-
 		-- Other
 		["@lsp.type.builtinType"] = {},
 		["@lsp.type.escapeSequence"] = {},
@@ -59,7 +56,6 @@ function M.get(C, O)
 		["@lsp.type.selfKeyword"] = {},
 		["@lsp.type.typeAlias"] = {},
 		["@lsp.type.unresolvedReference"] = {},
-
 
 		["@lsp.typemod.class.defaultLibrary"] = {},
 		["@lsp.typemod.enum.defaultLibrary"] = {},
@@ -73,7 +69,6 @@ function M.get(C, O)
 		["@lsp.typemod.type.defaultLibrary"] = {},
 		["@lsp.typemod.variable.defaultLibrary"] = {},
 		["@lsp.typemod.variable.injected"] = {},
-
 	}
 end
 
