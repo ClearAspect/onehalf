@@ -21,6 +21,7 @@ local M = {
 		},
 		integrations = {
 			cmp = true,
+			dropbar = true,
 			blink_cmp = true,
 			diffview = true,
 			fzf = true,
