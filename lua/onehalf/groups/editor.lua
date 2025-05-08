@@ -61,9 +61,9 @@ function M.get(C, O)
 		Whitespace = { fg = C.non_text },
 		WildMenu = { fg = C.fg },
 
-		-- WinBar
-		-- WinBarNc
-		-- WinSeparator
+		WinBar = { fg = "NONE", bg = O.transparency and "NONE" or "NONE" },
+		WinBarNc = { link = "Winbar" },
+		WinSeparator = { link = "Winbar" },
 
 		-- PmenuKind = { link = 'Pmenu' },
 		-- PmenuKindSel = { link = 'PmenuSel' },
