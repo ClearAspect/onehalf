@@ -1,6 +1,11 @@
+---@module 'onehalf.theme'
+--- Core theme engine that applies highlight groups to Neovim
+
 local hl = vim.api.nvim_set_hl
 local theme = {}
 
+--- Set all highlight groups for the OneHalf colorscheme
+---@param options OneHalfOptions Configuration options for styling and integrations
 theme.set_highlights = function(options)
 	-- Get the Palette once
 	local palette = require("onehalf.util").get_colors()
@@ -11,8 +16,8 @@ theme.set_highlights = function(options)
 		"syntax",
 	}
 
-	-- Apply highlight function
-
+	--- Apply a table of highlight definitions to Neovim
+	---@param highlights table<string, table> Mapping of highlight group names to their attributes
 	local apply_highlights = function(highlights)
 		for group, colors in pairs(highlights) do
 			if colors.styles then

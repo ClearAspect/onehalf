@@ -1,4 +1,41 @@
+---@module 'onehalf'
+--- OneHalf colorscheme for Neovim with plugin integrations
+
 local theme = require("onehalf.theme")
+
+---@class OneHalfOptions
+---@field transparency? boolean Enable transparency by disabling background colors
+---@field terminal_colors? boolean Apply theme colors to Neovim terminal windows
+---@field styles? OneHalfStyles Style configurations for syntax groups
+---@field integrations? OneHalfIntegrations Plugin integration settings
+
+---@class OneHalfStyles
+---@field comments? table Style attributes for comments
+---@field conditionals? table Style attributes for conditionals
+---@field loops? table Style attributes for loops
+---@field functions? table Style attributes for functions
+---@field keywords? table Style attributes for keywords
+---@field strings? table Style attributes for strings
+---@field variables? table Style attributes for variables
+---@field numbers? table Style attributes for numbers
+---@field booleans? table Style attributes for booleans
+---@field properties? table Style attributes for properties
+---@field types? table Style attributes for types
+---@field operators? table Style attributes for operators
+
+---@class OneHalfIntegrations
+---@field cmp? boolean nvim-cmp completion menu integration
+---@field dropbar? boolean dropbar.nvim integration
+---@field blink_cmp? boolean blink.cmp completion integration
+---@field diffview? boolean diffview.nvim integration
+---@field fzf? boolean fzf-lua integration
+---@field gitsigns? boolean gitsigns.nvim integration
+---@field semantic_tokens? boolean LSP semantic token integration
+---@field telescope? boolean telescope.nvim integration
+---@field treesitter_context? boolean treesitter-context integration
+---@field treesitter? boolean nvim-treesitter integration
+---@field whichkey? boolean which-key.nvim integration
+
 local M = {
 	default_options = {
 		transparency = false,
@@ -37,6 +74,8 @@ local M = {
 
 M.options = M.default_options
 
+--- Load and apply the OneHalf colorscheme
+---@param style? "dark"|"light" Theme variant to load (defaults to "dark")
 M.load = function(style)
 	-- default to dark if none is specified
 	style = style or "dark"
@@ -60,7 +99,8 @@ M.load = function(style)
 	theme.set_highlights(M.options)
 end
 
--- Setup the theme
+--- Configure the OneHalf colorscheme with user options
+---@param user_options? OneHalfOptions User configuration to merge with defaults
 M.setup = function(user_options)
 	-- Merge the users options with the default options
 	M.options = vim.tbl_extend("force", M.default_options, user_options or {})

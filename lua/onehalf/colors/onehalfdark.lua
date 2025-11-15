@@ -1,3 +1,24 @@
+---@class ColorPalette
+---@field black string Primary black color
+---@field red string Primary red color
+---@field green string Primary green color
+---@field yellow string Primary yellow color
+---@field blue string Primary blue color
+---@field purple string Primary purple color
+---@field cyan string Primary cyan color
+---@field white string Primary white color
+---@field fg string Default foreground color
+---@field bg string Default background color
+---@field comment_fg string Color for comments
+---@field gutter_bg string Background color for line number gutter
+---@field gutter_fg string Foreground color for line numbers
+---@field non_text string Color for non-text elements
+---@field cursor_line string Background color for cursor line
+---@field color_col string Color column background
+---@field selection string Selection background color
+---@field vertsplit string Vertical split border color
+
+---@type ColorPalette
 local colors = {
 	black = "#282c34",
 	red = "#e06c75",

@@ -1,5 +1,9 @@
 local M = {}
 
+--- Get terminal color definitions for Neovim terminal
+---@param C ColorPalette Color palette for the current theme variant
+---@param O OneHalfOptions User configuration options
+---@return table<string, string> terminal_colors Mapping of terminal color variables to hex values
 function M.get(C, O)
 	return {
 

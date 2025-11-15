@@ -1,3 +1,4 @@
+---@type ColorPalette
 local colors = {
 	black = "#383a42",
 	red = "#e45649",
