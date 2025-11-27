@@ -163,3 +163,13 @@ require('onehalf').setup({
 - [catppuccin/nvim](https://github.com/catppuccin/nvim) - Project structure inspiration
 
 This project wouldn't be possible without the beautiful OneHalf color palette created by sonph, and the excellent project structure examples from the tokyonight and catppuccin Neovim themes.
+
+## Star History
+
+<a href="https://www.star-history.com/#clearaspect/onehalf&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=clearaspect/onehalf&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=clearaspect/onehalf&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=clearaspect/onehalf&type=date&legend=top-left" />
+ </picture>
+</a>
