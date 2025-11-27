@@ -7,8 +7,8 @@ local theme = {}
 --- Set all highlight groups for the OneHalf colorscheme
 ---@param options OneHalfOptions Configuration options for styling and integrations
 theme.set_highlights = function(options)
-	-- Get the Palette once
-	local palette = require("onehalf.util").get_colors()
+	-- Get the Palette once (with potential dimming applied)
+	local palette = require("onehalf.util").get_colors(options)
 
 	-- Core editor highlights
 	local core_modules = {

@@ -51,6 +51,12 @@ colorscheme onehalflight
 require('onehalf').setup({
     transparency = false, -- Enable this to disable background color
     terminal_colors = true, -- Apply the theme to neovim terminal windows
+    -- Color dimming/darkening configuration
+    dimming = {
+        enable = false,         -- Enable color dimming
+        dim_level = 0.2,        -- Dimming intensity (0.0-1.0)
+        preserve_accents = true -- Maintain accent color vibrancy
+    },
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value for `:help nvim_set_hl`
     styles = {
@@ -109,6 +115,25 @@ require('onehalf').setup({
 ```
 
 Only the integrations you want to modify need to be specified. Any integrations not mentioned will use their default values.
+
+### Color Dimming
+
+You can darken the OneHalf dark colorscheme for a more subdued appearance:
+
+```lua
+require('onehalf').setup({
+    dimming = {
+        enable = true,         -- Enable color dimming
+        dim_level = 0.3,       -- 30% dimming (0.0-1.0)
+        preserve_accents = true -- Keep accent colors vibrant
+    },
+})
+```
+
+**Dimming Options:**
+- `enable`: Toggle dimming on/off
+- `dim_level`: Intensity from 0.0 (no dimming) to 1.0 (maximum dimming)
+- `preserve_accents`: When true, accent colors (red, green, blue, etc.) receive lighter dimming to maintain color distinction
 
 ## ✨ Features
 
