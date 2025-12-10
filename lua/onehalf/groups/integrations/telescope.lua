@@ -8,7 +8,7 @@ function M.get(C, O)
 	return {
 		-- TelescopeNormal = { link = "NormalFloat" }, -- Respect telescope's default float bg
 		TelescopeSelectionCaret = { fg = C.purple },
-		TelescopeSelection = { fg = C.purple, bg = C.bg, bold = true },
+		TelescopeSelection = { fg = C.purple, bg = C.bg1, bold = true },
 		TelescopeMatching = { fg = C.blue },
 
 		diffOldFile = { fg = C.blue },

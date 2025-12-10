@@ -8,7 +8,9 @@
 ---@field cyan string Primary cyan color
 ---@field white string Primary white color
 ---@field fg string Default foreground color
----@field bg string Default background color
+---@field bg0 string Darkened background color
+---@field bg1 string Default background color
+---@field bg2 string Lightened background color
 ---@field comment_fg string Color for comments
 ---@field gutter_bg string Background color for line number gutter
 ---@field gutter_fg string Foreground color for line numbers
@@ -29,7 +31,9 @@ local colors = {
 	cyan = "#56b6c2",
 	white = "#dcdfe4",
 	fg = "#dcdfe4",
-	bg = "#282c34",
+	bg0 = "#24282f",
+	bg1 = "#282c34",
+	bg2 = "#3a404c",
 	comment_fg = "#5c6370",
 	gutter_bg = "#282c34",
 	gutter_fg = "#919baa",

@@ -9,9 +9,9 @@ function M.get(C, O)
 
 		ColorColumn = { bg = C.color_col },
 		Conceal = { fg = C.fg },
-		Cursor = { fg = C.bg, bg = C.blue },
-		lCursor = { fg = C.bg, bg = C.blue },
-		CursorIM = { fg = C.bg, bg = C.blue },
+		Cursor = { fg = C.bg1, bg = C.blue },
+		lCursor = { fg = C.bg1, bg = C.blue },
+		CursorIM = { fg = C.bg1, bg = C.blue },
 		CursorColumn = { bg = C.cursor_line },
 		CursorLine = { bg = C.cursor_line },
 		Directory = { fg = C.blue },
@@ -31,11 +31,11 @@ function M.get(C, O)
 		-- MsgSeparator
 		MoreMsg = { fg = C.fg },
 		NonText = { fg = C.non_text },
-		Normal = { fg = C.fg, bg = O.transparency and "NONE" or C.bg },
+		Normal = { fg = C.fg, bg = O.transparency and "NONE" or C.bg1 },
 		-- NormalNC
 		-- NoramlSB
-		NormalFloat = { fg = C.comment_fg, bg = C.bg },
-		FloatBorder = { fg = C.blue },
+		NormalFloat = { fg = C.comment_fg, bg = C.bg0 },
+		FloatBorder = { fg = C.gutter_fg },
 		FloatTitle = { fg = C.fg },
 		Pmenu = { fg = C.fg, bg = C.cursor_line },
 		PmenuSel = { bg = C.selection },
@@ -43,19 +43,19 @@ function M.get(C, O)
 		PmenuThumb = { fg = C.selection },
 		Question = { fg = C.purple },
 		--QuickFixLine
-		Search = { fg = C.bg, bg = C.yellow },
-		IncSearch = { fg = C.bg, bg = C.yellow },
+		Search = { fg = C.bg1, bg = C.yellow },
+		IncSearch = { fg = C.bg1, bg = C.yellow },
 		-- CurSearch
 		SpecialKey = { fg = C.fg },
 		SpellBad = { fg = C.red },
 		SpellCap = { fg = C.yellow },
 		SpellLocal = { fg = C.yellow },
 		SpellRare = { fg = C.yellow },
-		StatusLine = { fg = C.fg, bg = C.bg },
+		StatusLine = { fg = C.fg, bg = O.transparency and "NONE" or C.bg1 },
 		StatusLineNC = { fg = C.comment_fg, bg = C.cursor_line },
 		TabLine = { fg = C.comment_fg, bg = C.cursor_line },
 		TabLineFill = { fg = C.comment_fg, bg = O.transparency and "NONE" or C.cursor_line },
-		TabLineSel = { fg = C.fg, bg = C.bg },
+		TabLineSel = { fg = C.fg, bg = C.bg1 },
 		-- TermCursor
 		-- TermCursorNC
 		Title = { fg = C.green },
